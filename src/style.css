@@ -1,118 +1,94 @@
+/* 页面头部的基础样式 */
 header {
     display: flex;
     justify-content: space-between;
-    /* 在子元素间平均分配空间 */
     align-items: center;
-    /* 垂直居中对齐子元素 */
     background-color: #1b1b1b;
-    /* 背景色，参考调色板 */
     padding: 10px 20px;
-    /* 内边距 */
     border-bottom: 1px solid #292929;
-    /* 可选的底部边框 */
 }
 
+/* Logo容器的样式，用于包裹Logo相关的元素 */
 .logo-container {
     display: flex;
     align-items: center;
-    /* 垂直居中对齐 */
     gap: 16px;
-    /* 替代之前的 &nbsp; 间距 */
 }
 
+/* Logo文字部分的样式 */
 .logo-container.logo-text {
     font-family: "Arial", sans-serif;
-    /* 假设使用Arial作为Orion Esperanto Dika的替代 */
-    /* 若有Orion Esperanto Dika字体文件，可使用 @font-face 引入并在此处指定 */
     font-size: 1.8rem;
     font-weight: bold;
     color: #ffffff;
     text-decoration: none;
 }
 
+/* Logo文字中特定span元素（如"Hub"部分）的样式 */
 .logo-container.logo-text span {
     color: #ffa31a;
-    /* 品牌橙色 */
     font-weight: normal;
-    /* Hub部分的字重可能不同 */
 }
 
-/* 如果使用图片Logo */
+/* Logo图片容器的样式（如果使用图片Logo） */
 .logo-container.logo-image {
     height: 40px;
-    /* 根据实际Logo尺寸调整 */
     width: auto;
     vertical-align: middle;
 }
 
+/* "ph-logo"（仿Pornhub风格Logo）的整体容器样式 */
 .ph-logo {
     display: inline-flex;
-    /* 让子元素在同一行显示 */
     font-family: Arial, Helvetica, sans-serif;
-    /* 使用常见的无衬线字体 */
     font-size: 32px;
-    /* 根据需要调整大小 */
     font-weight: bold;
     line-height: 1.2;
-    /* 调整行高以更好地垂直居中文本 */
     text-align: center;
     border-radius: 8px;
-    /* 给整个容器轻微的圆角，可选 */
     overflow: hidden;
-    /* 确保子元素的圆角生效 */
-    /* border: 2px solid #000; */
-    /* 可选的黑色边框 */
 }
 
+/* "ph-logo"中"Porn"部分的样式 */
 .ph-logo-porn {
     background: rgba(0, 0, 0, 0);
-    /* 黑色背景 */
     color: #FFFFFF;
-    /* 白色文字 */
     padding: 5px 10px;
     border-top-left-radius: 6px;
-    /* 左上角圆角，与父容器一致或略小 */
     border-bottom-left-radius: 6px;
-    /* 左下角圆角，与父容器一致或略小 */
 }
 
+/* "ph-logo"中"Hub"部分的样式 */
 .ph-logo-hub {
     background-color: #FF9900;
-    /* 橙色/黄色背景 */
     color: #000000;
-    /* 黑色文字 */
     padding: 5px 10px;
     border-top-right-radius: 15px;
-    /* 右上角圆角 */
     border-bottom-right-radius: 15px;
-    /* 右下角圆角 */
-    /* 为hub部分添加左侧圆角，模拟原Logo效果 */
     border-top-left-radius: 15px;
-    /* hub部分左上圆角 */
     border-bottom-left-radius: 15px;
-    /* hub部分左下圆角 */
     margin-left: -4px;
-    /* 轻微的负边距以使"hub"的圆角部分覆盖"Porn"的边缘，使其看起来更像一个整体 */
 }
 
+/* 导航栏无序列表的基础样式 */
 nav ul {
     list-style-type: none;
-    /* 移除默认列表标记 */
     padding: 0;
     margin: 0;
     display: flex;
-    /* 使列表项水平排列 */
 }
 
+/* 导航栏列表项的样式 */
 nav ul li {
     margin-left: 20px;
-    /* 列表项间距 */
 }
 
+/* 导航栏第一个列表项的特殊处理（移除左边距） */
 nav ul li:first-child {
     margin-left: 0;
 }
 
+/* 导航栏链接的样式 */
 nav ul li a {
     text-decoration: none;
     color: #ffffff;
@@ -123,29 +99,24 @@ nav ul li a {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* 导航栏链接悬浮或激活状态的样式 */
 nav ul li a:hover,
 nav ul li a.active {
-    /* 假设有.active类表示当前页面 */
     color: #1b1b1b;
     background-color: #ff9900;
-    /* 橙色背景，白色文字 */
 }
 
+/* 汉堡菜单图标的容器样式 */
 .hamburger-menu {
     width: 24px;
-    /* 设置汉堡菜单按钮的宽度 */
     height: 18px;
-    /* 设置汉堡菜单按钮的高度 */
     display: flex;
-    /* 使用弹性布局 */
     flex-direction: column;
-    /* 垂直排列子元素 */
     justify-content: space-between;
-    /* 在垂直方向上均匀分布子元素 */
     cursor: pointer;
-    /* 鼠标悬停时显示手型光标 */
 }
 
+/* 汉堡菜单图标中每一横的样式 */
 .hamburger-menu span {
     display: block;
     height: 3px;
@@ -154,12 +125,12 @@ nav ul li a.active {
     transition: transform 0.3s ease;
 }
 
-/* 鼠标悬停效果 */
+/* 汉堡菜单图标悬浮时的横条样式 */
 .hamburger-menu:hover span {
     background-color: #ffa31a;
 }
 
-/* 按钮样式 */
+/* 桌面导航按钮（包裹汉堡菜单）的样式 */
 #desktopNavigation {
     background: none;
     border: none;
@@ -167,88 +138,81 @@ nav ul li a.active {
     cursor: pointer;
 }
 
+/* 桌面导航按钮悬浮效果 */
 #desktopNavigation:hover {
     opacity: 0.8;
 }
 
+/* 搜索栏容器的样式 */
 .search-bar {
     display: flex;
-    /* 使输入框和按钮水平排列 */
 }
 
+/* 搜索栏输入框的样式 */
 .search-bar input[type="text"] {
     padding: 8px 12px;
     border: 1px solid #292929;
     background-color: #292929;
-    /* 深灰色背景 */
     color: #ffffff;
-    /* 白色文字 */
     border-radius: 4px 0 0 4px;
-    /* 左侧圆角 */
     outline: none;
     font-size: 0.9rem;
     min-width: 250px;
-    /* 最小宽度 */
 }
 
+/* 搜索栏输入框占位符文本的样式 */
 .search-bar input[type="text"]::placeholder {
     color: #808080;
-    /* 灰色占位符文字 */
 }
 
+/* 搜索栏提交按钮的样式 */
 .search-bar button[type="submit"] {
     padding: 8px 15px;
     background-color: #ffa31a;
-    /* 橙色按钮 */
     color: #1b1b1b;
-    /* 深色文字，确保对比度 */
     border: 1px solid #ffa31a;
     border-left: none;
-    /* 避免与输入框边框重叠 */
     border-radius: 0 4px 4px 0;
-    /* 右侧圆角 */
     cursor: pointer;
     font-size: 0.9rem;
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
 
+/* 搜索栏提交按钮悬浮效果 */
 .search-bar button[type="submit"]:hover {
     background-color: #e69500;
-    /* 悬停时略深的橙色 */
 }
 
+/* 视频卡片的基础样式 */
 .video-card {
     width: 90%;
     height: auto;
     background-color: #292929;
-    /* 卡片背景色，比页面背景稍亮 */
     border-radius: 4px;
-    /* 圆角 */
     overflow: hidden;
-    /* 确保图片圆角生效 */
     display: flex;
     flex-direction: column;
-    /* 使卡片内容垂直排列 */
     transition: transform 0.2s ease-in-out;
 }
 
+/* 视频卡片悬浮效果 */
 .video-card:hover {
     transform: translateY(-5px);
-    /* 轻微上浮效果 */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+/* 视频卡片缩略图链接容器的样式，用于保持16:9比例 */
 .thumbnail-link {
     position: relative;
     display: block;
     width: 100%;
     padding-top: 56.25%;
-    /* 16:9 比例 (9/16 * 100%) */
     background: #000;
     overflow: hidden;
 }
 
+/* 视频卡片图片的样式，确保填充缩略图容器并保持比例 */
 .video-card img {
     position: absolute;
     top: 0;
@@ -256,12 +220,10 @@ nav ul li a.active {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* 保持比例裁剪 */
     object-position: center;
-    /* 居中裁剪 */
 }
 
-
+/* 视频时长标签的样式 */
 .duration {
     position: absolute;
     bottom: 8px;
@@ -272,317 +234,303 @@ nav ul li a.active {
     font-size: 0.75rem;
     border-radius: 2px;
     z-index: 1;
-    /* 确保时长显示在图片上层 */
 }
 
+/* 视频信息区域的样式（标题、元数据等） */
 .video-info {
     padding: 12px;
 }
 
+/* 视频标题的样式，包括多行省略效果 */
 .video-title {
     font-size: 1rem;
     font-weight: bold;
     margin: 0 0 8px 0;
     line-height: 1.3;
-    /* 处理长标题，例如显示两行后省略 */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     min-height: 2.6em;
-    /* 确保至少两行的高度 */
 }
 
+/* 视频标题内链接的样式 */
 .video-title a {
     color: #ffffff;
     text-decoration: none;
 }
 
+/* 视频标题内链接悬浮效果 */
 .video-title a:hover {
     color: #ffa31a;
 }
 
+/* 视频元数据（观看次数、上传时间）的样式 */
 .video-meta {
     font-size: 0.8rem;
     color: #808080;
-    /* 灰色元数据文本 */
 }
 
+/* 视频元数据中每个span元素的样式 */
 .video-meta span {
     margin-right: 10px;
 }
 
+/* 视频元数据中最后一个span元素的特殊处理（移除右边距） */
 .video-meta span:last-child {
     margin-right: 0;
 }
 
+/* 视频网格容器的样式 */
 .video-grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* 固定4列 */
     gap: 20px;
     padding: 20px;
     max-width: 1440px;
-    /* 设置最大宽度 */
     margin: 0 auto;
-    /* 居中显示 */
 }
 
+/* 页面页脚的基础样式 */
 footer {
     background: #1b1b1b;
-    /* 深色背景 */
     color: #808080;
-    /* 较浅的灰色文本，用于次要信息 */
     padding: 30px 20px;
     border-top: 1px solid #292929;
-    /* 可选的顶部边框 */
 }
 
+/* 页脚头部信息区域（例如声明文本）的样式 */
 .footer-head {
-    /* background-color: #000000; */
     color: #ffffff;
-    /* 白色文字 */
     font-size: 0.8rem;
-    /* 较小的字体大小 */
     margin-bottom: 20px;
-    /* 底部间距 */
     text-align: center;
-    /* 居中对齐 */
     padding: 0 0;
 }
 
+/* 页脚主要内容区域（包含多列链接）的样式 */
 .footer-content {
     display: flex;
     flex-wrap: wrap;
-    /* 允许列在小屏幕上换行 */
     justify-content: center;
-    /* 居中对齐列 */
     gap: 60px;
-    /* 列之间的间距 */
     max-width: 1440px;
-    /* 设置最大宽度 */
     margin: 0 auto;
-    /* 居中显示 */
     padding: 0 20px;
-    /* 内边距 */
 }
 
+/* 页脚中每一列的样式 */
 .footer-column {
     flex: 1;
-    /* 使列在可用空间内平均分配宽度 */
     min-width: 180px;
-    /* 列的最小宽度，有助于响应式换行 */
     padding: 0 20px;
 }
 
+/* 页脚列中标题（h4）的样式 */
 .footer-column h4 {
     color: #808080;
     font-size: 1.1rem;
     margin-bottom: 15px;
     font-weight: bold;
     padding-left: 0;
-    /* 移除标题的内边距 */
 }
 
+/* 页脚列中无序列表的样式 */
 .footer-column ul {
     list-style-type: none;
     padding: 0;
-    /* 移除列表的默认内边距 */
     margin: 0;
 }
 
+/* 页脚列中列表项的样式 */
 .footer-column ul li {
     margin-bottom: 8px;
 }
 
+/* 页脚列中链接的样式 */
 .footer-column ul li a {
     color: #ff9900;
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
+/* 页脚列中链接悬浮效果 */
 .footer-column ul li a:hover {
-    /* color: #ffffff; */
     text-decoration: underline;
 }
 
+/* 页脚底部区域（如版权信息）的样式 */
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
     border-top: 1px solid #292929;
-    /* 分隔线 */
     font-size: 0.85rem;
 }
 
+/* 页面body元素的全局基础样式 */
 body {
     font-family: Arial, sans-serif;
-    /* 默认字体，与排版指南一致 */
     margin: 0;
-    /* 移除浏览器默认外边距 */
     padding: 0;
-    /* 移除浏览器默认内边距 */
     background-color: #101010;
-    /* 全局背景色，来自调色板 [1] */
     color: #ffffff;
-    /* 全局默认文本颜色 */
     line-height: 1.6;
-    /* 设置合适的行高以提高可读性 */
     font-size: 16px;
-    /* 基础字号 */
 }
 
-/* 全局链接样式 (可选，如果希望所有链接有统一的基础样式) */
+/* 全局链接的基础样式 */
 a {
     color: #ffa31a;
-    /* 默认链接颜色为品牌橙 */
     text-decoration: none;
-    /* 通常移除下划线，通过其他方式指示链接 */
 }
 
+/* 全局链接悬浮效果 */
 a:hover {
     text-decoration: underline;
-    /* 悬停时添加下划线作为反馈 */
 }
 
-/* 确保盒子模型的计算方式一致 */
+/* 全局盒子模型设置为border-box，应用于所有元素及其伪元素 */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
-/* 中等屏幕 (例如平板电脑) */
+/* 响应式设计：中等屏幕 (最大宽度1024px，例如平板电脑) */
 @media (max-width: 1024px) {
+    /* 视频网格容器在中等屏幕下的样式 */
     .video-grid-container {
-        /* 在中等屏幕上，可以减少列的最小宽度或调整间距 */
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 15px;
         padding: 15px;
     }
 
+    /* 视频卡片图片在中等屏幕下的样式，保持宽高比 */
     .video-card img {
         aspect-ratio: 16/9;
-        /* 保持视频比例 */
         object-fit: cover;
     }
 
+    /* 头部在中等屏幕下的内边距调整 */
     header {
         padding: 10px 15px;
     }
 
+    /* 导航列表项在中等屏幕下的左边距调整 */
     nav ul li {
         margin-left: 15px;
     }
 
+    /* 搜索框输入栏在中等屏幕下的最小宽度调整 */
     .search-bar input[type="text"] {
         min-width: 200px;
     }
 }
 
-/* 小型屏幕 (例如手机横屏或较大手机竖屏) */
+/* 响应式设计：小型屏幕 (最大宽度768px，例如手机横屏或较大手机竖屏) */
 @media (max-width: 768px) {
+    /* 头部在小型屏幕下的布局调整为垂直堆叠 */
     header {
         flex-direction: column;
-        /* 头部元素垂直堆叠 */
         align-items: flex-start;
-        /* 左对齐 */
     }
 
+    /* 导航栏在小型屏幕下占满宽度并增加上边距 */
     nav {
         width: 100%;
         margin-top: 10px;
     }
 
+    /* 导航列表在小型屏幕下垂直堆叠 */
     nav ul {
         flex-direction: column;
-        /* 导航链接垂直堆叠 */
         width: 100%;
     }
 
+    /* 导航列表项在小型屏幕下的样式调整 */
     nav ul li {
         margin-left: 0;
         margin-bottom: 5px;
         width: 100%;
     }
 
+    /* 导航链接在小型屏幕下块状显示并居中 */
     nav ul li a {
         display: block;
-        /* 使链接占据整行，方便点击 */
         text-align: center;
         padding: 10px;
     }
 
+    /* 搜索栏在小型屏幕下占满宽度并增加上边距 */
     .search-bar {
         width: 100%;
         margin-top: 10px;
     }
 
+    /* 搜索输入框在小型屏幕下占据剩余空间 */
     .search-bar input[type="text"] {
         flex-grow: 1;
-        /* 输入框占据剩余空间 */
     }
 
+    /* 视频网格容器在小型屏幕下的样式调整 */
     .video-grid-container {
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        /* 进一步调整卡片大小 */
         gap: 10px;
         padding: 10px;
     }
 
+    /* 视频标题在小型屏幕下的字号调整 */
     .video-title {
         font-size: 0.9rem;
     }
 
+    /* 页脚内容区域在小型屏幕下垂直堆叠 */
     .footer-content {
         flex-direction: column;
-        /* 页脚列垂直堆叠 */
     }
 
+    /* 页脚列在小型屏幕下的样式调整 */
     .footer-column {
         margin-bottom: 20px;
-        /* 堆叠列之间的间距 */
         min-width: 100%;
-        /* 列占据全部宽度 */
     }
 
+    /* 页脚最后一列在小型屏幕下移除底部外边距 */
     .footer-column:last-child {
         margin-bottom: 0;
     }
 }
 
-/* 超小型屏幕 (例如手机竖屏) */
+/* 响应式设计：超小型屏幕 (最大宽度480px，例如手机竖屏) */
 @media (max-width: 480px) {
+    /* body在超小型屏幕下的基础字号调整 */
     body {
         font-size: 14px;
-        /* 减小基础字号 */
     }
 
+    /* Logo文字在超小型屏幕下的字号调整 */
     .logo-container.logo-text {
         font-size: 1.5rem;
     }
 
+    /* 头部在超小型屏幕下的内边距调整 */
     header {
         padding: 10px;
     }
 
-    /* 视频卡片可以考虑单列显示，或调整minmax使其更窄 */
+    /* 视频网格容器在超小型屏幕下的样式调整 */
     .video-grid-container {
-        /* grid-template-columns: 1fr; */
-        /* 单列显示 */
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         padding: 10px 5px;
-        /* 调整内边距 */
     }
 
-    /* .video-card {
-        如果是单列，可以移除一些阴影或调整边距
-    } */
-
+    /* 页脚列标题在超小型屏幕下的字号调整 */
     .footer-column h4 {
         font-size: 1rem;
     }
 
+    /* 页脚列链接在超小型屏幕下的字号调整 */
     .footer-column ul li a {
         font-size: 0.85rem;
     }
