@@ -13,6 +13,10 @@
 1.  确保您已经拥有 `index.html` 和 `style.css` 这两个文件，并且它们在同一个文件夹层级下（或者`style.css`在`index.html`所引用的正确路径下）。
 2.  直接在您的网页浏览器中打开 `index.html` 文件即可查看。
 
+## 预览
+
+![预览图片](./static/images/preview.png)
+
 ## ⚠️ 注意
 
 部分内容由AIGC生成，请注意辨别。
