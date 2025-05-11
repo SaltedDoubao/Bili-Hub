@@ -1,0 +1,589 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    /* 在子元素间平均分配空间 */
+    align-items: center;
+    /* 垂直居中对齐子元素 */
+    background-color: #1b1b1b;
+    /* 背景色，参考调色板 */
+    padding: 10px 20px;
+    /* 内边距 */
+    border-bottom: 1px solid #292929;
+    /* 可选的底部边框 */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    /* 垂直居中对齐 */
+    gap: 16px;
+    /* 替代之前的 &nbsp; 间距 */
+}
+
+.logo-container.logo-text {
+    font-family: "Arial", sans-serif;
+    /* 假设使用Arial作为Orion Esperanto Dika的替代 */
+    /* 若有Orion Esperanto Dika字体文件，可使用 @font-face 引入并在此处指定 */
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logo-container.logo-text span {
+    color: #ffa31a;
+    /* 品牌橙色 */
+    font-weight: normal;
+    /* Hub部分的字重可能不同 */
+}
+
+/* 如果使用图片Logo */
+.logo-container.logo-image {
+    height: 40px;
+    /* 根据实际Logo尺寸调整 */
+    width: auto;
+    vertical-align: middle;
+}
+
+.ph-logo {
+    display: inline-flex;
+    /* 让子元素在同一行显示 */
+    font-family: Arial, Helvetica, sans-serif;
+    /* 使用常见的无衬线字体 */
+    font-size: 32px;
+    /* 根据需要调整大小 */
+    font-weight: bold;
+    line-height: 1.2;
+    /* 调整行高以更好地垂直居中文本 */
+    text-align: center;
+    border-radius: 8px;
+    /* 给整个容器轻微的圆角，可选 */
+    overflow: hidden;
+    /* 确保子元素的圆角生效 */
+    /* border: 2px solid #000; */
+    /* 可选的黑色边框 */
+}
+
+.ph-logo-porn {
+    background: rgba(0, 0, 0, 0);
+    /* 黑色背景 */
+    color: #FFFFFF;
+    /* 白色文字 */
+    padding: 5px 10px;
+    border-top-left-radius: 6px;
+    /* 左上角圆角，与父容器一致或略小 */
+    border-bottom-left-radius: 6px;
+    /* 左下角圆角，与父容器一致或略小 */
+}
+
+.ph-logo-hub {
+    background-color: #FF9900;
+    /* 橙色/黄色背景 */
+    color: #000000;
+    /* 黑色文字 */
+    padding: 5px 10px;
+    border-top-right-radius: 15px;
+    /* 右上角圆角 */
+    border-bottom-right-radius: 15px;
+    /* 右下角圆角 */
+    /* 为hub部分添加左侧圆角，模拟原Logo效果 */
+    border-top-left-radius: 15px;
+    /* hub部分左上圆角 */
+    border-bottom-left-radius: 15px;
+    /* hub部分左下圆角 */
+    margin-left: -4px;
+    /* 轻微的负边距以使"hub"的圆角部分覆盖"Porn"的边缘，使其看起来更像一个整体 */
+}
+
+nav ul {
+    list-style-type: none;
+    /* 移除默认列表标记 */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* 使列表项水平排列 */
+}
+
+nav ul li {
+    margin-left: 20px;
+    /* 列表项间距 */
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    /* 假设有.active类表示当前页面 */
+    color: #1b1b1b;
+    background-color: #ff9900;
+    /* 橙色背景，白色文字 */
+}
+
+.hamburger-menu {
+    width: 24px;
+    /* 设置汉堡菜单按钮的宽度 */
+    height: 18px;
+    /* 设置汉堡菜单按钮的高度 */
+    display: flex;
+    /* 使用弹性布局 */
+    flex-direction: column;
+    /* 垂直排列子元素 */
+    justify-content: space-between;
+    /* 在垂直方向上均匀分布子元素 */
+    cursor: pointer;
+    /* 鼠标悬停时显示手型光标 */
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #ff9900;
+    transition: transform 0.3s ease;
+}
+
+/* 鼠标悬停效果 */
+.hamburger-menu:hover span {
+    background-color: #ffa31a;
+}
+
+/* 按钮样式 */
+#desktopNavigation {
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+#desktopNavigation:hover {
+    opacity: 0.8;
+}
+
+.search-bar {
+    display: flex;
+    /* 使输入框和按钮水平排列 */
+}
+
+.search-bar input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #292929;
+    background-color: #292929;
+    /* 深灰色背景 */
+    color: #ffffff;
+    /* 白色文字 */
+    border-radius: 4px 0 0 4px;
+    /* 左侧圆角 */
+    outline: none;
+    font-size: 0.9rem;
+    min-width: 250px;
+    /* 最小宽度 */
+}
+
+.search-bar input[type="text"]::placeholder {
+    color: #808080;
+    /* 灰色占位符文字 */
+}
+
+.search-bar button[type="submit"] {
+    padding: 8px 15px;
+    background-color: #ffa31a;
+    /* 橙色按钮 */
+    color: #1b1b1b;
+    /* 深色文字，确保对比度 */
+    border: 1px solid #ffa31a;
+    border-left: none;
+    /* 避免与输入框边框重叠 */
+    border-radius: 0 4px 4px 0;
+    /* 右侧圆角 */
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button[type="submit"]:hover {
+    background-color: #e69500;
+    /* 悬停时略深的橙色 */
+}
+
+.video-card {
+    width: 90%;
+    height: auto;
+    background-color: #292929;
+    /* 卡片背景色，比页面背景稍亮 */
+    border-radius: 4px;
+    /* 圆角 */
+    overflow: hidden;
+    /* 确保图片圆角生效 */
+    display: flex;
+    flex-direction: column;
+    /* 使卡片内容垂直排列 */
+    transition: transform 0.2s ease-in-out;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    /* 轻微上浮效果 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.thumbnail-link {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 比例 (9/16 * 100%) */
+    background: #000;
+    overflow: hidden;
+}
+
+.video-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 保持比例裁剪 */
+    object-position: center;
+    /* 居中裁剪 */
+}
+
+
+.duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    border-radius: 2px;
+    z-index: 1;
+    /* 确保时长显示在图片上层 */
+}
+
+.video-info {
+    padding: 12px;
+}
+
+.video-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+    line-height: 1.3;
+    /* 处理长标题，例如显示两行后省略 */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 2.6em;
+    /* 确保至少两行的高度 */
+}
+
+.video-title a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.video-title a:hover {
+    color: #ffa31a;
+}
+
+.video-meta {
+    font-size: 0.8rem;
+    color: #808080;
+    /* 灰色元数据文本 */
+}
+
+.video-meta span {
+    margin-right: 10px;
+}
+
+.video-meta span:last-child {
+    margin-right: 0;
+}
+
+.video-grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 固定4列 */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1440px;
+    /* 设置最大宽度 */
+    margin: 0 auto;
+    /* 居中显示 */
+}
+
+footer {
+    background: #1b1b1b;
+    /* 深色背景 */
+    color: #808080;
+    /* 较浅的灰色文本，用于次要信息 */
+    padding: 30px 20px;
+    border-top: 1px solid #292929;
+    /* 可选的顶部边框 */
+}
+
+.footer-head {
+    /* background-color: #000000; */
+    color: #ffffff;
+    /* 白色文字 */
+    font-size: 0.8rem;
+    /* 较小的字体大小 */
+    margin-bottom: 20px;
+    /* 底部间距 */
+    text-align: center;
+    /* 居中对齐 */
+    padding: 0 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    /* 允许列在小屏幕上换行 */
+    justify-content: center;
+    /* 居中对齐列 */
+    gap: 60px;
+    /* 列之间的间距 */
+    max-width: 1440px;
+    /* 设置最大宽度 */
+    margin: 0 auto;
+    /* 居中显示 */
+    padding: 0 20px;
+    /* 内边距 */
+}
+
+.footer-column {
+    flex: 1;
+    /* 使列在可用空间内平均分配宽度 */
+    min-width: 180px;
+    /* 列的最小宽度，有助于响应式换行 */
+    padding: 0 20px;
+}
+
+.footer-column h4 {
+    color: #808080;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    padding-left: 0;
+    /* 移除标题的内边距 */
+}
+
+.footer-column ul {
+    list-style-type: none;
+    padding: 0;
+    /* 移除列表的默认内边距 */
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #ff9900;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-column ul li a:hover {
+    /* color: #ffffff; */
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #292929;
+    /* 分隔线 */
+    font-size: 0.85rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    /* 默认字体，与排版指南一致 */
+    margin: 0;
+    /* 移除浏览器默认外边距 */
+    padding: 0;
+    /* 移除浏览器默认内边距 */
+    background-color: #101010;
+    /* 全局背景色，来自调色板 [1] */
+    color: #ffffff;
+    /* 全局默认文本颜色 */
+    line-height: 1.6;
+    /* 设置合适的行高以提高可读性 */
+    font-size: 16px;
+    /* 基础字号 */
+}
+
+/* 全局链接样式 (可选，如果希望所有链接有统一的基础样式) */
+a {
+    color: #ffa31a;
+    /* 默认链接颜色为品牌橙 */
+    text-decoration: none;
+    /* 通常移除下划线，通过其他方式指示链接 */
+}
+
+a:hover {
+    text-decoration: underline;
+    /* 悬停时添加下划线作为反馈 */
+}
+
+/* 确保盒子模型的计算方式一致 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 中等屏幕 (例如平板电脑) */
+@media (max-width: 1024px) {
+    .video-grid-container {
+        /* 在中等屏幕上，可以减少列的最小宽度或调整间距 */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .video-card img {
+        aspect-ratio: 16/9;
+        /* 保持视频比例 */
+        object-fit: cover;
+    }
+
+    header {
+        padding: 10px 15px;
+    }
+
+    nav ul li {
+        margin-left: 15px;
+    }
+
+    .search-bar input[type="text"] {
+        min-width: 200px;
+    }
+}
+
+/* 小型屏幕 (例如手机横屏或较大手机竖屏) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        /* 头部元素垂直堆叠 */
+        align-items: flex-start;
+        /* 左对齐 */
+    }
+
+    nav {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        /* 导航链接垂直堆叠 */
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        /* 使链接占据整行，方便点击 */
+        text-align: center;
+        padding: 10px;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-bar input[type="text"] {
+        flex-grow: 1;
+        /* 输入框占据剩余空间 */
+    }
+
+    .video-grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        /* 进一步调整卡片大小 */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .video-title {
+        font-size: 0.9rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        /* 页脚列垂直堆叠 */
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+        /* 堆叠列之间的间距 */
+        min-width: 100%;
+        /* 列占据全部宽度 */
+    }
+
+    .footer-column:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* 超小型屏幕 (例如手机竖屏) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+        /* 减小基础字号 */
+    }
+
+    .logo-container.logo-text {
+        font-size: 1.5rem;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    /* 视频卡片可以考虑单列显示，或调整minmax使其更窄 */
+    .video-grid-container {
+        /* grid-template-columns: 1fr; */
+        /* 单列显示 */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        padding: 10px 5px;
+        /* 调整内边距 */
+    }
+
+    /* .video-card {
+        如果是单列，可以移除一些阴影或调整边距
+    } */
+
+    .footer-column h4 {
+        font-size: 1rem;
+    }
+
+    .footer-column ul li a {
+        font-size: 0.85rem;
+    }
+}
