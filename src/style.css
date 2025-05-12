@@ -1,3 +1,14 @@
+/* 页面body元素的全局基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: #ffffff;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
 /* 页面头部的基础样式 */
 header {
     display: flex;
@@ -186,9 +197,9 @@ nav ul li a.active {
 
 /* 视频卡片的基础样式 */
 .video-card {
-    width: 90%;
+    width: 97%;
     height: auto;
-    background-color: #292929;
+    background-color: rgba(0, 0, 0, 0);
     border-radius: 4px;
     overflow: hidden;
     display: flex;
@@ -286,8 +297,8 @@ nav ul li a.active {
 .video-grid-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    padding: 20px;
+    gap: 0px;
+    padding: 20px 40px;
     max-width: 1440px;
     margin: 0 auto;
 }
@@ -366,17 +377,6 @@ footer {
     padding-top: 20px;
     border-top: 1px solid #292929;
     font-size: 0.85rem;
-}
-
-/* 页面body元素的全局基础样式 */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #101010;
-    color: #ffffff;
-    line-height: 1.6;
-    font-size: 16px;
 }
 
 /* 全局链接的基础样式 */
