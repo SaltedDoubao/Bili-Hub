@@ -6,14 +6,14 @@
 
 该项目是一个简单的静态HTML和CSS实现的仿国外某著名爱情动作视频网站风格的首页。
 
-## 项目简介
+## ✏️项目简介
 
 这是一个纯静态页面项目，不需要复杂的安装步骤：
 
 1.  确保您已经拥有 `index.html` 和 `style.css` 这两个文件，并且它们在同一个文件夹层级下（或者`style.css`在`index.html`所引用的正确路径下）。
 2.  直接在您的网页浏览器中打开 `index.html` 文件即可查看。
 
-## 预览
+## 👀预览
 
 ![预览图片](./static/images/preview.png)
 
@@ -21,11 +21,17 @@
 
 部分内容由AIGC生成，请注意辨别。
 
-## 许可证
+## 🚧 施工规划与进度
+
+目前还在完善一些细节
+
+（估计以后会考虑做个接入bilibili的动态html吧）
+
+## 🏛️许可证
 
 本项目采用 [MIT License](https://opensource.org/licenses/MIT) 开源许可证。
 
-## 联系方式
+## 📞联系方式
 
 邮箱：salteddoubao@gmail.com
 QQ：1531895767
