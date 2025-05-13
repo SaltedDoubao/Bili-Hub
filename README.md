@@ -40,7 +40,9 @@
 
 ## 👀 预览
 
-![预览图片](./static/images/preview.png)
+![预览图片](./static/images/preview(1).png)
+
+![预览图片](./static/images/preview(2).png)
 
 ## ⚠️ 注意
 
