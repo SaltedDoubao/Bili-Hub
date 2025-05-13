@@ -15,15 +15,17 @@ header {
     justify-content: space-between;
     align-items: center;
     background-color: #1b1b1b;
-    padding: 10px 20px;
+    padding: 10px 10px;
     border-bottom: 1px solid #292929;
+    gap: 10px;
+    position: relative;
 }
 
 /* Logo容器的样式，用于包裹Logo相关的元素 */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 10px;
 }
 
 /* Logo文字部分的样式 */
@@ -74,10 +76,10 @@ header {
     background-color: #FF9900;
     color: #000000;
     padding: 5px 10px;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     margin-left: -4px;
 }
 
@@ -91,12 +93,7 @@ nav ul {
 
 /* 导航栏列表项的样式 */
 nav ul li {
-    margin-left: 20px;
-}
-
-/* 导航栏第一个列表项的特殊处理（移除左边距） */
-nav ul li:first-child {
-    margin-left: 0;
+    margin-left: 10px;
 }
 
 /* 导航栏链接的样式 */
@@ -115,6 +112,24 @@ nav ul li a:hover,
 nav ul li a.active {
     color: #1b1b1b;
     background-color: #ff9900;
+}
+
+/* 修改左侧导航栏样式 */
+.nav-ul-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 0px;
+}
+
+/* 修改右侧导航栏样式 */
+.nav-ul-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    margin-right: 20px;
 }
 
 /* 汉堡菜单图标的容器样式 */
@@ -157,6 +172,10 @@ nav ul li a.active {
 /* 搜索栏容器的样式 */
 .search-bar {
     display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 /* 搜索栏输入框的样式 */
@@ -174,6 +193,7 @@ nav ul li a.active {
 /* 搜索栏输入框占位符文本的样式 */
 .search-bar input[type="text"]::placeholder {
     color: #808080;
+    width: 300px;
 }
 
 /* 搜索栏提交按钮的样式 */
@@ -195,6 +215,83 @@ nav ul li a.active {
     background-color: #e69500;
 }
 
+/* 圆形头像框 */
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+}
+
+.avatar-info {
+    padding: 0px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* 下拉菜单容器 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* 下拉菜单内容 */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #1b1b1b;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    padding: 8px 0;
+    z-index: 1000;
+}
+
+/* 下拉菜单链接样式 */
+.dropdown-content a {
+    color: #ffffff;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* 下拉菜单链接悬浮效果 */
+.dropdown-content a:hover {
+    background-color: #292929;
+    color: #ff9900;
+}
+
+/* 显示下拉菜单 */
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+/* 调整三角形图标位置 */
+.dropdown > a::after {
+    content: '';
+    display: inline-block;
+    margin-left: 5px;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #ffffff transparent transparent transparent;
+    vertical-align: middle;
+    transition: transform 0.3s ease;
+}
+
+/* 悬浮时旋转三角形图标 */
+.dropdown:hover > a::after {
+    transform: rotate(180deg);
+}
+
 /* 视频卡片的基础样式 */
 .video-card {
     width: 97%;
@@ -207,11 +304,11 @@ nav ul li a.active {
     transition: transform 0.2s ease-in-out;
 }
 
-/* 视频卡片悬浮效果 */
+/* 视频卡片悬浮效果 /
 .video-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
+} */
 
 /* 视频卡片缩略图链接容器的样式，用于保持16:9比例 */
 .thumbnail-link {
@@ -249,7 +346,7 @@ nav ul li a.active {
 
 /* 视频信息区域的样式（标题、元数据等） */
 .video-info {
-    padding: 12px;
+    padding: 0px;
 }
 
 /* 视频标题的样式，包括多行省略效果 */
@@ -395,6 +492,18 @@ a:hover {
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+/* 添加动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* 响应式设计：中等屏幕 (最大宽度1024px，例如平板电脑) */

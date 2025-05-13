@@ -1,0 +1,42 @@
+[
+  {
+    "id": "bv1",
+    "thumbnailUrl": "../static/images/eb0c597deca8151cfbe4f1807755141e42a10a92.jpg",
+    "videoUrl": "https://www.bilibili.com/video/BV1NZmGYzEVx/?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click",
+    "title": "这几把是啥",
+    "duration": "15:42",
+    "views": "2.5M 次观看",
+    "uploadTime": "3 小时前",
+    "altText": "视频封面 1"
+  },
+  {
+    "id": "cyberpunk",
+    "thumbnailUrl": "../static/images/cyberpunk2077.png",
+    "videoUrl": "#",
+    "title": "\"早上好，夜之城\"",
+    "duration": "07:23",
+    "views": "456K 次观看",
+    "uploadTime": "5 天前",
+    "altText": "视频封面 2"
+  },
+  {
+    "id": "bv3",
+    "thumbnailUrl": "../static/images/5242750857121e05146d5d5b13a47a2a6dd36e98.jpg",
+    "videoUrl": "https://www.bilibili.com/video/BV1GJ411x7h7/?spm_id_from=333.337.search-card.all.click",
+    "title": "自觉点进来受骗",
+    "duration": "03:33",
+    "views": "92.1M 次观看",
+    "uploadTime": "5 年前",
+    "altText": "视频封面 3"
+  },
+  {
+    "id": "bv_placeholder_9",
+    "thumbnailUrl": "",
+    "videoUrl": "#",
+    "title": "视频标题9",
+    "duration": "11:45",
+    "views": "3.1K 次观看",
+    "uploadTime": "14 天前",
+    "altText": "视频封面 9"
+  }
+]
