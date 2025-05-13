@@ -32,7 +32,7 @@
 
         2.  打开命令行/终端，使用 `cd` 命令进入项目的**根目录**
 
-        3.  执行命令: `python -m http.server 8000` 或 `python -m SimpleHTTPServer 8000`
+        3.  执行命令: `python3 -m http.server 8000` 或 `python -m SimpleHTTPServer 8000`
 
 3.  **查看页面：**
     一旦本地服务器成功运行，您的浏览器应该会自动打开或您可以手动访问指定的 `http://localhost:8000/src/` 或 `http://localhost:8000/src/index.html` 地址来查看项目首页。
