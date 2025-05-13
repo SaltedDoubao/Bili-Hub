@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>仿 Pornhub 风格页面</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="search.js" defer></script>
 </head>
 
 <body>
@@ -80,8 +81,8 @@
                 <li class="dropdown"><a href="">赛事</a></li>
             </ul>
         </nav>
-        <form class="search-bar" action="#" method="get">
-            <input type="text" name="query" placeholder="搜索视频...">
+        <form class="search-bar" action="#" method="get" onsubmit="return handleSearch(event)">
+            <input type="text" name="keyword" id="searchInput" placeholder="搜索视频..." required>
             <button type="submit">搜索</button>
         </form>
         <nav class="nav-ul-right">
@@ -189,6 +190,7 @@
 
 <!-- 
 施工规划：
+    鼠标指针悬停于搜索栏时，显示搜索历史
     当指针悬停于视频封面时，预览视频的功能
     鼠标指针悬停于用户头像时，悬浮菜单显示用户信息
     实装搜索栏的功能，转到url=https://search.bilibili.com/all?keyword=[user input]
