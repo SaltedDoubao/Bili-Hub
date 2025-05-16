@@ -70,10 +70,13 @@
 
 ## 📞联系方式
 
+邮箱：
 ```
-邮箱：salteddoubao@gmail.com
-
-QQ：1531895767
+salteddoubao@gmail.com
+```
+QQ：
+```
+1531895767
 ```
 
 BiliBili：[椒盐豆包](https://space.bilibili.com/498891142)
