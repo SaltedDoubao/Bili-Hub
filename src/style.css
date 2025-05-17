@@ -706,3 +706,27 @@ a:hover {
         font-size: 0.85rem;
     }
 }
+
+/* 免责声明样式 */
+.disclaimer {
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: rgba(255, 153, 0, 0.1);
+    border-left: 3px solid #ff9900;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    color: #cccccc;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+}
+
+.disclaimer p {
+    margin: 0;
+}
+
+.disclaimer strong {
+    color: #ff9900;
+}
