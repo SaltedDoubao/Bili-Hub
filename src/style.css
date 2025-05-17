@@ -217,24 +217,53 @@ nav ul li a.active {
 
 /* 搜索历史栏容器 */
 .search-dropdown {
-    position: static;
-    align-items: center;
-    display: inline-block;
-    /* 位置；搜索栏下方 */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 24px);
+    max-width: 400px;
+    z-index: 1000;
+    display: none;
+    margin-top: 2px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
 /* 搜索历史栏内容 */
 .search-dropdown-content {
-
+    background-color: #1b1b1b;
+    border: 1px solid #484848;
+    border-radius: 4px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    overflow: hidden;
 }
 
 /* 搜索历史栏样式 */
 .search-dropdown-content a {
+    color: #ffffff;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid #292929;
+}
 
+/* 搜索历史栏链接悬浮效果 */
+.search-dropdown-content a:hover {
+    background-color: #292929;
+    color: #ff9900;
 }
 
 /* 搜索栏悬浮效果 */
-
+.search-bar:focus-within + .search-dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn 0.3s ease;
+}
 
 /* 圆形头像框 */
 .avatar {
@@ -663,6 +692,26 @@ a {
     /* 搜索输入框在小型屏幕下占据剩余空间 */
     .search-bar input[type="text"] {
         flex-grow: 1;
+    }
+
+    /* 搜索下拉框在小型屏幕下的样式调整 */
+    .search-dropdown {
+        width: 100%;
+        max-width: none;
+        position: relative;
+        margin-top: 5px;
+        transform: none;
+        left: 0;
+        display: none;
+    }
+    
+    /* 搜索栏及下拉框在小型屏幕下的容器 */
+    .search-bar {
+        position: relative;
+        transform: none;
+        left: auto;
+        width: 100%;
+        margin: 10px 0;
     }
 
     /* 视频网格容器在小型屏幕下的样式调整 */
