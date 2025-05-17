@@ -42,9 +42,9 @@
 
 ## 👀 预览
 
-![预览图片](./static/images/preview(1).png)
+![预览图片](./res/images/preview(1).png)
 
-![预览图片](./static/images/preview(2).png)
+![预览图片](./res/images/preview(2).png)
 
 ## 🚧 施工规划 (未来会加入的功能)
 
