@@ -220,6 +220,7 @@ nav ul li a.active {
     position: static;
     align-items: center;
     display: inline-block;
+    /* 位置；搜索栏下方 */
 }
 
 /* 搜索历史栏内容 */
