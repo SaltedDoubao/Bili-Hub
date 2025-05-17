@@ -533,9 +533,9 @@ a {
 }
 
 /* 全局链接悬浮效果 */
-a:hover {
+/* a:hover {
     text-decoration: underline;
-}
+} */
 
 /* 全局盒子模型设置为border-box，应用于所有元素及其伪元素 */
 *,
