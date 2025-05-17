@@ -215,6 +215,26 @@ nav ul li a.active {
     background-color: #e69500;
 }
 
+/* 搜索历史栏容器 */
+.search-dropdown {
+    position: static;
+    align-items: center;
+    display: inline-block;
+}
+
+/* 搜索历史栏内容 */
+.search-dropdown-content {
+
+}
+
+/* 搜索历史栏样式 */
+.search-dropdown-content a {
+
+}
+
+/* 搜索栏悬浮效果 */
+
+
 /* 圆形头像框 */
 .avatar {
     width: 50px;
