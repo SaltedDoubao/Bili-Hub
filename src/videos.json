@@ -1,7 +1,7 @@
 [
   {
     "id": "bv1",
-    "thumbnailUrl": "../static/images/eb0c597deca8151cfbe4f1807755141e42a10a92.jpg",
+    "thumbnailUrl": "../res/images/eb0c597deca8151cfbe4f1807755141e42a10a92.jpg",
     "videoUrl": "https://www.bilibili.com/video/BV1NZmGYzEVx/?spm_id_from=333.1007.top_right_bar_window_custom_collection.content.click",
     "title": "这几把是啥",
     "duration": "15:42",
@@ -11,7 +11,7 @@
   },
   {
     "id": "bv2",
-    "thumbnailUrl": "../static/images/cyberpunk2077.png",
+    "thumbnailUrl": "../res/images/cyberpunk2077.png",
     "videoUrl": "#",
     "title": "\"早上好，夜之城\"",
     "duration": "07:21",
@@ -21,7 +21,7 @@
   },
   {
     "id": "bv3",
-    "thumbnailUrl": "../static/images/5242750857121e05146d5d5b13a47a2a6dd36e98.jpg",
+    "thumbnailUrl": "../res/images/5242750857121e05146d5d5b13a47a2a6dd36e98.jpg",
     "videoUrl": "https://www.bilibili.com/video/BV1GJ411x7h7/?spm_id_from=333.337.search-card.all.click",
     "title": "自觉点进来受骗",
     "duration": "03:33",
@@ -31,7 +31,7 @@
   },
   {
     "id": "bv4",
-    "thumbnailUrl": "../static/images/b1a07a8baefa0694760cd6d99f212bee45d1333d.jpg",
+    "thumbnailUrl": "../res/images/b1a07a8baefa0694760cd6d99f212bee45d1333d.jpg",
     "videoUrl": "https://www.bilibili.com/video/BV1yt4y1Q7SS/?spm_id_from=333.1387.favlist.content.click",
     "title": "敢杀我的马?!",
     "duration": "02:26",
@@ -41,7 +41,7 @@
   },
   {
     "id": "bv5",
-    "thumbnailUrl": "../static/images/fed63f41d3e153d13534f7b8b022f927e8f1aebc.jpg",
+    "thumbnailUrl": "../res/images/fed63f41d3e153d13534f7b8b022f927e8f1aebc.jpg",
     "videoUrl": "https://www.bilibili.com/video/BV1D4fKYREUM/?spm_id_from=333.1387.favlist.content.click",
     "title": "【東方Project】琪露诺 | 冰芷海 头像",
     "duration": "00:15",
