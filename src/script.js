@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const videoCardHTML = `
                     <a href="${video.videoUrl || '#'}" class="thumbnail-link" ${video.videoUrl && video.videoUrl !== '#' ? 'target="_blank"' : ''}>
-                        <img src="${video.thumbnailUrl || '../static/images/placeholder.png'}" alt="${video.altText || '视频封面'}"> {/* 提供一个默认图片 */}
+                        <img src="${video.thumbnailUrl || '../res/images/placeholder.png'}" alt="${video.altText || '视频封面'}"> {/* 提供一个默认图片 */}
                         <span class="duration">${video.duration || ''}</span>
                     </a>
                     <div class="video-info">
