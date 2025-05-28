@@ -1,3 +1,10 @@
+/* 设置页面默认缩放比例为90% */
+html {
+    zoom: 0.9; /* 适用于大多数浏览器 */
+    -moz-transform: scale(0.9); /* Firefox */
+    -moz-transform-origin: 0 0;
+}
+
 /* 页面body元素的全局基础样式 */
 body {
     font-family: Arial, sans-serif;
