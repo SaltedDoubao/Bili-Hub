@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 全局样式和背景设置 */
+body {
+    font-family: Arial, "Microsoft YaHei", sans-serif;
+    background-color: #000000;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #cccccc;
+}
+
+/* 登录容器样式 */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    padding: 0;
+}
+
+/* Logo区域样式 */
+.logo-box {
+    width: 380px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    margin-bottom: 20px;
+}
+
+/* 引入style.css中的logo样式 */
+/* "ph-logo"（仿Pornhub风格Logo）的整体容器样式 */
+.ph-logo {
+    display: inline-flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* "ph-logo"中"Porn"部分的样式 */
+.ph-logo-porn {
+    background: rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+    padding: 5px 10px;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+/* "ph-logo"中"Hub"部分的样式 */
+.ph-logo-hub {
+    background-color: #FF9900;
+    color: #000000;
+    padding: 5px 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin-left: -4px;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.logo-section img {
+    max-width: 200px;
+    height: auto;
+}
+
+/* 登录框样式 - 暗色主题 */
+.login-box {
+    background-color: #1b1b1b;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 420px;
+    text-align: left;
+    border: 1px solid #292929;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+/* 表单元素样式 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #cccccc;
+    font-size: 14px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #292929;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #292929;
+    color: #ffffff;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus {
+    outline: none;
+    border-color: #FF9900;
+    box-shadow: 0 0 5px rgba(255, 153, 0, 0.5);
+}
+
+/* 按钮样式 */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #FF9900;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.login-btn:hover {
+    background-color: #e69500;
+}
+
+/* 额外链接样式 */
+.extra-links {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #808080;
+}
+
+.extra-links a {
+    color: #FF9900;
+    text-decoration: none;
+}
+
+.extra-links a:hover {
+    text-decoration: underline;
+    color: #ffa31a;
+}
