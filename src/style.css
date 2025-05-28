@@ -265,22 +265,239 @@ nav ul li a.active {
     animation: fadeIn 0.3s ease;
 }
 
-/* 圆形头像框 */
+/* 头像容器样式 */
+.avatar-info {
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+/* 头像触发器样式 */
+.avatar-trigger {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* 头像图片样式 */
 .avatar {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    cursor: pointer;
     object-fit: cover;
-    border: 2px solid #ffffff;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
 }
 
-.avatar-info {
-    padding: 0px;
-    width: 50px;
-    height: 50px;
+.avatar:hover {
+    border-color: #ff9900;
+}
+
+/* 头像二级菜单 */
+.avatar-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #1b1b1b;
+    border: 1px solid #292929;
+    border-radius: 4px;
+    min-width: 260px;
+    z-index: 1000;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* 显示头像二级菜单 */
+.avatar-dropdown.show {
+    display: block;
+}
+
+/* 头像二级菜单内容 */
+.avatar-dropdown-content {
+    padding: 15px;
+}
+
+/* 用户信息区域 */
+.user-info {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
     align-items: center;
+    border-bottom: 1px solid #292929;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+/* 大头像 */
+.avatar-large {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+}
+
+.avatar-large img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff9900;
+}
+
+/* 用户名样式 */
+.username {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* 用户等级 */
+.user-level {
+    display: flex;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.level-tag {
+    background-color: #00a1d6;
+    color: white;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.vip-tag {
+    background-color: #ff9900;
+    color: #000000;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 菜单组 */
+.menu-group {
+    margin: 10px 0;
+}
+
+.menu-group.border-top {
+    border-top: 1px solid #292929;
+    padding-top: 10px;
+}
+
+/* 菜单项 */
+.menu-group a {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.menu-group a:hover {
+    color: #ff9900;
+}
+
+.menu-icon {
+    margin-right: 8px;
+    font-style: normal;
+}
+
+/* 登录区域 */
+.login-section {
+    padding: 10px 0;
+}
+
+.login-section p {
+    color: #cccccc;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.login-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.login-benefits li {
+    color: #999999;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.login-btn {
+    display: block;
+    background-color: #ff9900;
+    color: #000000;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #e69500;
+}
+
+/* 用户下拉菜单容器 */
+.user-dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #1b1b1b;
+    border: 1px solid #292929;
+    border-radius: 4px;
+    padding: 10px;
+    min-width: 120px;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 用户下拉菜单链接样式 */
+.user-dropdown a {
+    display: block;
+    color: #ff9900;
+    text-decoration: none;
+    padding: 5px 0;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.user-dropdown a:hover {
+    color: #ffa31a;
+    text-decoration: underline;
+}
+
+/* 显示用户下拉菜单 */
+.avatar-dropdown-content:hover .user-dropdown {
+    display: block;
+}
+
+/* 登录提示样式 */
+.login-prompt {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #1b1b1b;
+    border: 1px solid #292929;
+    border-radius: 4px;
+    padding: 10px;
+    color: #ff9900;
+    font-size: 14px;
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-dropdown-content:hover .login-prompt {
+    display: block;
 }
 
 /* 下拉菜单容器 */
@@ -293,8 +510,7 @@ nav ul li a.active {
 .dropdown-content {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
     position: absolute;
     top: 100%;
     left: 0;
@@ -328,7 +544,6 @@ nav ul li a.active {
 .dropdown:hover .dropdown-content {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
     /* display: block; */
     animation: fadeIn 0.3s ease;
 }
@@ -404,11 +619,11 @@ nav ul li a.active {
     transition: transform 0.2s ease-in-out;
 }
 
-/* 视频卡片悬浮效果 /
+/* 视频卡片悬浮效果 */
 .video-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-} */
+}
 
 /* 视频卡片缩略图链接容器的样式，用于保持16:9比例 */
 .thumbnail-link {
@@ -598,11 +813,9 @@ a {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-10px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -610,11 +823,9 @@ a {
 @keyframes fadeOut {
     from {
         opacity: 1;
-        transform: translateY(0);
     }
     to {
         opacity: 0;
-        transform: translateY(-10px);
     }
 }
 
