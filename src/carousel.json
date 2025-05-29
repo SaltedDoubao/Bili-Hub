@@ -1,0 +1,23 @@
+[
+  {
+    "id": "carousel1",
+    "imageUrl": "../res/images/fed63f41d3e153d13534f7b8b022f927e8f1aebc.jpg",
+    "title": "【東方Project】琪露诺 | 冰芷海 头像",
+    "description": "精美东方Project同人作品",
+    "link": "https://www.bilibili.com/video/BV1D4fKYREUM/"
+  },
+  {
+    "id": "carousel2",
+    "imageUrl": "../res/images/cyberpunk2077.png",
+    "title": "\"早上好，夜之城\"",
+    "description": "赛博朋克2077精彩游戏画面",
+    "link": "#"
+  },
+  {
+    "id": "carousel3",
+    "imageUrl": "../res/images/5242750857121e05146d5d5b13a47a2a6dd36e98.jpg",
+    "title": "自觉点进来受骗",
+    "description": "热门视频推荐",
+    "link": "https://www.bilibili.com/video/BV1GJ411x7h7/"
+  }
+] 
