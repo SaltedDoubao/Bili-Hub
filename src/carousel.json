@@ -19,5 +19,26 @@
     "title": "自觉点进来受骗",
     "description": "热门视频推荐",
     "link": "https://www.bilibili.com/video/BV1GJ411x7h7/"
+  },
+  {
+    "id": "carousel4",
+    "imageUrl": "../res/images/0683cda0b4c97a5a4bf5877bb2a0ce52f2f1c1f5.jpg",
+    "title": "鸡 你 太 美 官 方 M V",
+    "description": "鸡年限定视频",
+    "link": "https://www.bilibili.com/video/BV178411Y7QB/?spm_id_from=333.1387.favlist.content.click"
+  },
+  {
+    "id": "carousel5",
+    "imageUrl": "../res/images/8168bb0d12637af579b603e74aefce254fc7bd29.jpg",
+    "title": "【Minecraft】15种内部构建技巧和设计理念！",
+    "description": "MC建筑小技巧",
+    "link": "https://www.bilibili.com/video/BV1pY411n7b4/?spm_id_from=333.1387.favlist.content.click"
+  },
+  {
+    "id": "carousel6",
+    "imageUrl": "../res/images/bbc89c4459b0098d87189f60a7dc4dc51567e24f.jpg",
+    "title": "【Procreate】不是吧！渐变映射你还是个摆设？玩藏色啊！！！",
+    "description": "不画了,累了",
+    "link": "https://www.bilibili.com/video/BV1cM4m1m7DV/?spm_id_from=333.1387.favlist.content.click"
   }
 ] 
