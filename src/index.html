@@ -10,7 +10,9 @@
 </head>
 
 <body>
+    <!-- 页面头部 - 包含导航栏、搜索框和用户信息 -->
     <header>
+        <!-- LOGO区域 - 左侧汉堡菜单和LOGO标志 -->
         <div class="logo-container">
             <a href="../src/index.html" class="logo-text">
                 <button id="desktopNavigation" type="button" aria-label="Desktop Navigation">
@@ -25,11 +27,14 @@
                 <span class="ph-logo-porn">Bili</span><span class="ph-logo-hub">Bili</span>
             </div>
         </div>
+        
+        <!-- 左侧导航菜单 - 首页、分类、频道等 -->
         <nav class="nav-ul-left">
             <ul>
                 <li class="dropdown">
                     <a href="/src/index.html">首页</a>
                     <div class="dropdown-content multi-column">
+                        <!-- 首页下拉菜单 - 分为5列显示不同分类 -->
                         <div class="column">
                             <a href="https://www.bilibili.com/anime/" target="_blank">🎬 番剧</a>
                             <a href="https://www.bilibili.com/movie/" target="_blank">🎦 电影</a>
@@ -74,14 +79,16 @@
                             <a href="https://www.bilibili.com/c/life_joy/" target="_blank">🎯 生活兴趣</a>
                             <a href="https://www.bilibili.com/c/life_experience/" target="_blank">📝 生活经验</a>
                             <a href="https://love.bilibili.com/" target="_blank">🤝 公益</a>
-                            <a href="https://www.bilibili.com/blackboard/era/Vp41b8bsU9Wkog3X.html" target="_blank">🎞️ 超高清</a>
+                            <a href="https://www.bilibili.com/blackboard/era/Vp41b8bsU9Wkog3X.html" target="_blank">🎞️
+                                超高清</a>
                         </div>
                         <div class="column">
                             <a href="https://www.bilibili.com/read/home/" target="_blank">📑 专栏</a>
                             <a href="https://live.bilibili.com/" target="_blank">🎥 直播</a>
                             <a href="https://www.bilibili.com/blackboard/activity-list.html?" target="_blank">🎪 活动</a>
                             <a href="https://www.bilibili.com/cheese/" target="_blank">📚 课堂</a>
-                            <a href="https://www.bilibili.com/blackboard/activity-5zJxM3spoS.html" target="_blank">👥 社区中心</a>
+                            <a href="https://www.bilibili.com/blackboard/activity-5zJxM3spoS.html" target="_blank">👥
+                                社区中心</a>
                             <a href="https://music.bilibili.com/pc/music-center/" target="_blank">🎵 新歌热榜</a>
                         </div>
                     </div>
@@ -94,13 +101,17 @@
                 <li class="dropdown"><a href="">赛事</a></li>
             </ul>
         </nav>
+        
+        <!-- 搜索框区域 - 中间的搜索功能 -->
         <form class="search-bar" action="#" method="get" onsubmit="return handleSearch(event)">
             <input type="text" name="keyword" id="searchInput" placeholder="搜索视频..." required>
             <button type="submit">搜索</button>
         </form>
         <div class="search-dropdown">
-            
+            <!-- 搜索历史下拉框 - 通过JavaScript动态生成 -->
         </div>
+        
+        <!-- 右侧导航菜单 - 大会员、消息、动态等功能 -->
         <nav class="nav-ul-right">
             <ul>
                 <li class="dropdown"><a href="">大会员</a></li>
@@ -129,18 +140,35 @@
                 </li>
             </ul>
         </nav>
+        
+        <!-- 用户头像区域 - 右侧用户信息和下拉菜单 -->
         <div class="avatar-info dropdown">
             <!-- 用户头像区域由script.js动态控制 -->
             <div id="avatar-dropdown" class="avatar-dropdown">
                 <!-- 动态内容将由script.js填充 -->
             </div>
         </div>
-
     </header>
 
+    <!-- 页面主体内容区域 -->
     <main>
+        <!-- 视频网格容器 - 显示视频卡片和轮播图 -->
         <div class="video-grid-container">
+            <!-- 轮播图容器 - 通过JavaScript从carousel.json加载数据 -->
+            <div class="carousel-container">
+                <div class="carousel">
+                    <!-- 轮播图幻灯片将通过JavaScript动态生成 -->
+                    <div class="carousel-arrow carousel-arrow-prev">❮</div>
+                    <div class="carousel-arrow carousel-arrow-next">❯</div>
+                </div>
+                <div class="carousel-nav">
+                    <!-- 轮播图导航点将通过JavaScript动态生成 -->
+                </div>
+            </div>
+            <!-- 视频卡片将通过script.js从videos.json动态加载 -->
         </div>
+        
+        <!-- 页脚上方信息区域 - 免责声明等 -->
         <div class="footer-head">
             <p>
                 本页面仅供学习使用，所有视频均来自网络，版权归原作者所有。
@@ -154,7 +182,9 @@
         </div>
     </main>
 
+    <!-- 页面底部 - 链接和版权信息 -->
     <footer>
+        <!-- 页脚内容区域 - 分为四列显示不同类别的链接 -->
         <div class="footer-content">
             <div class="footer-column">
                 <h4>信息</h4>
@@ -200,20 +230,23 @@
                 </ul>
             </div>
         </div>
+        
+        <!-- 版权信息区域 -->
         <div class="footer-bottom">
             <p>&copy; 2025 Bili-Hub "版权所有"</p>
         </div>
     </footer>
+    
+    <!-- JavaScript文件引用 -->
     <script src="./script.js"></script>
 
 </body>
 
 </html>
 
-<!-- 
+<!--
 施工规划：
     当指针悬停于视频封面时，预览视频的功能
     自动获取b站用户头像文件(或者说能否自动获取对应图像url?)
     多页面切换功能
-问题：暂无
 -->
