@@ -5,6 +5,119 @@ html {
     -moz-transform-origin: 0 0;
 }
 
+/* 轮播图容器样式 */
+.carousel-container {
+    grid-column: 1 / -1;
+    height: 400px; /* 固定高度，约为视频卡片高度的2倍 */
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background-color: #1b1b1b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.carousel {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    padding: 20px;
+}
+
+.carousel-title {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.carousel-description {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.carousel-nav {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: #ff9900;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.carousel-arrow:hover {
+    background-color: rgba(255, 153, 0, 0.8);
+}
+
+.carousel-arrow-prev {
+    left: 20px;
+}
+
+.carousel-arrow-next {
+    right: 20px;
+}
+
 /* 页面body元素的全局基础样式 */
 body {
     font-family: Arial, sans-serif;
@@ -305,7 +418,7 @@ nav ul li a.active {
 .avatar-dropdown {
     display: none;
     position: absolute;
-    top: 40px;
+    top: 70px;
     right: 0;
     background-color: #1b1b1b;
     border: 1px solid #292929;
@@ -366,7 +479,7 @@ nav ul li a.active {
 }
 
 .level-tag {
-    background-color: #00a1d6;
+    background-color: #00a0d6;
     color: white;
     padding: 1px 5px;
     border-radius: 3px;
@@ -836,8 +949,12 @@ a {
     }
 }
 
-/* 响应式设计：中等屏幕 (最大宽度1024px，例如平板电脑) */
+/* 设置响应式 */
 @media (max-width: 1024px) {
+    .carousel-container {
+        height: 350px;
+    }
+
     /* 视频网格容器在中等屏幕下的样式 */
     .video-grid-container {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -867,8 +984,11 @@ a {
     }
 }
 
-/* 响应式设计：小型屏幕 (最大宽度768px，例如手机横屏或较大手机竖屏) */
 @media (max-width: 768px) {
+    .carousel-container {
+        height: 300px;
+    }
+
     /* 头部在小型屏幕下的布局调整为垂直堆叠 */
     header {
         flex-direction: column;
@@ -961,8 +1081,11 @@ a {
     }
 }
 
-/* 响应式设计：超小型屏幕 (最大宽度480px，例如手机竖屏) */
 @media (max-width: 480px) {
+    .carousel-container {
+        height: 250px;
+    }
+
     /* body在超小型屏幕下的基础字号调整 */
     body {
         font-size: 14px;
