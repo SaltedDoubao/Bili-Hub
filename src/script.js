@@ -1,6 +1,3 @@
-// script.js
-// 确保在DOM完全加载后再执行脚本
-
 document.addEventListener('DOMContentLoaded', function() {
     // 加载并初始化轮播图
     const loadCarouselData = function() {

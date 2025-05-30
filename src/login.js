@@ -1,4 +1,3 @@
-// 等待DOM内容完全加载后再执行脚本
 window.addEventListener('DOMContentLoaded', (event) => {
     // 获取登录表单元素
     const loginForm = document.getElementById('loginForm');
