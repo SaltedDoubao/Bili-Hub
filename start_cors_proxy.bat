@@ -1,20 +1,20 @@
 @echo off
-echo æ­£åœ¨å¯åŠ¨LM Studio APIçš„CORSä»£ç†æœåŠ¡å™¨...
+echo ÕıÔÚÆô¶¯LM Studio APIµÄCORS´úÀí·şÎñÆ÷...
 echo.
-echo æ­¤çª—å£è¿è¡ŒæœŸé—´è¯·å‹¿å…³é—­ï¼
+echo ´Ë´°¿ÚÔËĞĞÆÚ¼äÇëÎğ¹Ø±Õ£¡
 echo.
-echo ä»£ç†å°†è¿æ¥åˆ° http://127.0.0.1:1234 å¹¶åœ¨ç«¯å£ 8010 ä¸Šæä¾›æœåŠ¡
-echo ç½‘é¡µåº”ç”¨ç¨‹åºåº”è¯¥è¿æ¥åˆ° http://localhost:8010/proxy
+echo ´úÀí½«Á¬½Óµ½ http://127.0.0.1:1234 ²¢ÔÚ¶Ë¿Ú 8010 ÉÏÌá¹©·şÎñ
+echo ÍøÒ³Ó¦ÓÃ³ÌĞòÓ¦¸ÃÁ¬½Óµ½ http://localhost:8010/proxy
 echo.
-echo æŒ‰ Ctrl+C å¯åœæ­¢ä»£ç†æœåŠ¡å™¨...
+echo °´ Ctrl+C ¿ÉÍ£Ö¹´úÀí·şÎñÆ÷...
 echo.
 
-:: æ£€æŸ¥æ˜¯å¦å®‰è£…äº†local-cors-proxy
+:: ¼ì²éÊÇ·ñ°²×°ÁËlocal-cors-proxy
 npx local-cors-proxy -v >nul 2>&1
 if %errorlevel% neq 0 (
-    echo æ­£åœ¨å®‰è£…local-cors-proxy...
+    echo ÕıÔÚ°²×°local-cors-proxy...
     npm install -g local-cors-proxy
 )
 
-:: å¯åŠ¨ä»£ç†
+:: Æô¶¯´úÀí
 npx local-cors-proxy --proxyUrl http://127.0.0.1:1234 --port 8010 
