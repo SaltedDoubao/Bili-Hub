@@ -26,14 +26,70 @@
                 <span class="ph-logo-porn">Bili</span><span class="ph-logo-hub">Hub</span>
             </div>
         </div>
-        
+
         <!-- 左侧导航菜单 - 首页、分类、频道等 -->
         <nav class="nav-ul-left">
             <ul>
                 <li class="dropdown">
                     <a href="/src/index.html">首页</a>
                     <div class="dropdown-content multi-column">
-                        <!-- 首页下拉菜单略 -->
+                        <!-- 首页下拉菜单 - 分为5列显示不同分类 -->
+                        <div class="column">
+                            <a href="https://www.bilibili.com/anime/" target="_blank">🎬 番剧</a>
+                            <a href="https://www.bilibili.com/movie/" target="_blank">🎦 电影</a>
+                            <a href="https://www.bilibili.com/guochuang/" target="_blank">🎨 国创</a>
+                            <a href="https://www.bilibili.com/tv/" target="_blank">📺 电视剧</a>
+                            <a href="https://www.bilibili.com/variety/" target="_blank">🎭 综艺</a>
+                            <a href="https://www.bilibili.com/documentary/" target="_blank">📹 纪录片</a>
+                            <a href="https://www.bilibili.com/c/douga/" target="_blank">🎮 动画</a>
+                            <a href="https://www.bilibili.com/c/game/" target="_blank">🎲 游戏</a>
+                            <a href="https://www.bilibili.com/c/kichiku/" target="_blank">🎵 鬼畜</a>
+                            <a href="https://www.bilibili.com/c/music/" target="_blank">🎼 音乐</a>
+                        </div>
+                        <div class="column">
+                            <a href="https://www.bilibili.com/c/dance/" target="_blank">💃 舞蹈</a>
+                            <a href="https://www.bilibili.com/c/cinephile/" target="_blank">🎥 影视</a>
+                            <a href="https://www.bilibili.com/c/ent/" target="_blank">🎪 娱乐</a>
+                            <a href="https://www.bilibili.com/c/knowledge/" target="_blank">📚 知识</a>
+                            <a href="https://www.bilibili.com/c/tech/" target="_blank">📱 科技数码</a>
+                            <a href="https://www.bilibili.com/c/information/" target="_blank">📰 资讯</a>
+                            <a href="https://www.bilibili.com/c/food/" target="_blank">🍜 美食</a>
+                            <a href="https://www.bilibili.com/c/shortplay/" target="_blank">🎭 小剧场</a>
+                            <a href="https://www.bilibili.com/c/car/" target="_blank">🚗 汽车</a>
+                            <a href="https://www.bilibili.com/c/fashion/" target="_blank">💄 时尚美妆</a>
+                        </div>
+                        <div class="column">
+                            <a href="https://www.bilibili.com/c/sports/" target="_blank">⚽ 体育运动</a>
+                            <a href="https://www.bilibili.com/c/animal/" target="_blank">🐾 动物</a>
+                            <a href="https://www.bilibili.com/c/vlog/" target="_blank">📽️ vlog</a>
+                            <a href="https://www.bilibili.com/c/painting/" target="_blank">🎨 绘画</a>
+                            <a href="https://www.bilibili.com/c/ai/" target="_blank">🤖 人工智能</a>
+                            <a href="https://www.bilibili.com/c/home/" target="_blank">🏠 家装房产</a>
+                            <a href="https://www.bilibili.com/c/outdoors/" target="_blank">👟 户外潮流</a>
+                            <a href="https://www.bilibili.com/c/gym/" target="_blank">💪 健身</a>
+                            <a href="https://www.bilibili.com/c/handmake/" target="_blank">🎨 手工</a>
+                            <a href="https://www.bilibili.com/c/travel/" target="_blank">✈️ 旅游出行</a>
+                        </div>
+                        <div class="column">
+                            <a href="https://www.bilibili.com/c/rural/" target="_blank">🌾 三农</a>
+                            <a href="https://www.bilibili.com/c/parenting/" target="_blank">👶 亲子</a>
+                            <a href="https://www.bilibili.com/c/health/" target="_blank">❤️ 健康</a>
+                            <a href="https://www.bilibili.com/c/emotion/" target="_blank">💝 情感</a>
+                            <a href="https://www.bilibili.com/c/life_joy/" target="_blank">🎯 生活兴趣</a>
+                            <a href="https://www.bilibili.com/c/life_experience/" target="_blank">📝 生活经验</a>
+                            <a href="https://love.bilibili.com/" target="_blank">🤝 公益</a>
+                            <a href="https://www.bilibili.com/blackboard/era/Vp41b8bsU9Wkog3X.html" target="_blank">🎞️
+                                超高清</a>
+                        </div>
+                        <div class="column">
+                            <a href="https://www.bilibili.com/read/home/" target="_blank">📑 专栏</a>
+                            <a href="https://live.bilibili.com/" target="_blank">🎥 直播</a>
+                            <a href="https://www.bilibili.com/blackboard/activity-list.html?" target="_blank">🎪 活动</a>
+                            <a href="https://www.bilibili.com/cheese/" target="_blank">📚 课堂</a>
+                            <a href="https://www.bilibili.com/blackboard/activity-5zJxM3spoS.html" target="_blank">👥
+                                社区中心</a>
+                            <a href="https://music.bilibili.com/pc/music-center/" target="_blank">🎵 新歌热榜</a>
+                        </div>
                     </div>
                 </li>
                 <li class="dropdown"><a href="">番剧</a></li>
@@ -44,7 +100,7 @@
                 <li class="dropdown"><a href="">赛事</a></li>
             </ul>
         </nav>
-        
+
         <!-- 搜索框区域 - 中间的搜索功能 -->
         <form class="search-bar" action="#" method="get" onsubmit="return handleSearch(event)">
             <input type="text" name="keyword" id="searchInput" placeholder="搜索视频..." required>
@@ -53,7 +109,7 @@
         <div class="search-dropdown">
             <!-- 搜索历史下拉框 -->
         </div>
-        
+
         <!-- 右侧导航菜单 - 大会员、消息、动态等功能 -->
         <nav class="nav-ul-right">
             <ul>
@@ -74,7 +130,7 @@
                 <li class="dropdown"><a href="">投稿</a></li>
             </ul>
         </nav>
-        
+
         <!-- 用户头像区域 - 右侧用户信息和下拉菜单 -->
         <div class="avatar-info dropdown">
             <!-- 用户头像区域由script.js动态控制 -->
@@ -104,7 +160,7 @@
                 <span>订阅</span>
             </a>
         </div>
-        
+
         <div class="sidebar-section-title">探索</div>
         <div class="sidebar-menu">
             <a href="" class="sidebar-menu-item">
@@ -132,7 +188,7 @@
                 <span>时尚</span>
             </a>
         </div>
-        
+
         <div class="sidebar-section-title">更多分类</div>
         <div class="sidebar-menu">
             <a href="" class="sidebar-menu-item">
@@ -152,7 +208,7 @@
                 <span>知识</span>
             </a>
         </div>
-        
+
         <div class="sidebar-section-title">频道</div>
         <div class="sidebar-menu">
             <a href="" class="sidebar-menu-item">
@@ -165,7 +221,7 @@
             </a>
         </div>
     </aside>
-    
+
     <!-- 侧边栏遮罩层 -->
     <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
@@ -175,7 +231,7 @@
         <div class="message-header">
             <h1>我的私信</h1>
         </div>
-        
+
         <!-- 私信内容区域 -->
         <div class="message-container">
             <!-- 联系人列表区域 -->
@@ -184,7 +240,7 @@
                     <input type="text" placeholder="搜索联系人..." id="contactSearch">
                     <span class="search-icon">🔍</span>
                 </div>
-                
+
                 <!-- 联系人列表 -->
                 <div class="contacts">
                     <div class="contact active" data-userid="1">
@@ -201,7 +257,7 @@
                             <div class="unread-badge">2</div>
                         </div>
                     </div>
-                    
+
                     <div class="contact" data-userid="2">
                         <div class="contact-avatar">
                             <img src="../res/images/placeholder.png" alt="用户头像">
@@ -215,7 +271,7 @@
                             <div class="contact-time">昨天</div>
                         </div>
                     </div>
-                    
+
                     <div class="contact" data-userid="3">
                         <div class="contact-avatar">
                             <img src="../res/images/placeholder.png" alt="用户头像">
@@ -229,11 +285,11 @@
                             <div class="contact-time">周一</div>
                         </div>
                     </div>
-                    
+
                     <!-- 更多联系人可以通过JavaScript动态添加 -->
                 </div>
             </div>
-            
+
             <!-- 聊天区域 -->
             <div class="chat-area">
                 <!-- 聊天头部 - 显示当前聊天对象 -->
@@ -257,12 +313,12 @@
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- 聊天消息区域 -->
                 <div class="chat-messages" id="chatMessages">
                     <!-- 聊天记录将由JS动态加载 -->
                 </div>
-                
+
                 <!-- 消息输入区域 -->
                 <div class="chat-input-area">
                     <!-- 工具栏 -->
@@ -277,7 +333,7 @@
                             <span class="toolbar-icon">📎</span>
                         </button>
                     </div>
-                    
+
                     <!-- 消息输入框 -->
                     <div class="chat-input-container">
                         <textarea id="messageInput" placeholder="发送消息..."></textarea>
@@ -285,7 +341,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- 空状态提示 - 当没有选择联系人时显示 -->
             <div class="chat-empty-state" style="display: none;">
                 <div class="empty-state-icon">💬</div>
@@ -336,15 +392,15 @@
                 </ul>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>&copy; 2025 Bili-Hub "版权所有"</p>
         </div>
     </footer>
-    
+
     <!-- JavaScript文件引用 -->
     <script src="./script.js"></script>
     <script src="./message.js" type="module"></script>
 </body>
 
-</html> 
+</html>
