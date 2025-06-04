@@ -56,8 +56,10 @@
 
 3. **启动CORS代理服务器**
    * 确保您的电脑已经安装node.js，且已经安装local-cors-proxy
+   ```
+    npm install -g local-cors-proxy
+   ```
    * 双击运行项目根目录中的`start_cors_proxy.bat`脚本
-   * 保持代理服务器窗口运行（不要关闭）
 
 4. **使用聊天功能**
    * 在网站中点击Gemini 2.5 Pro聊天选项
