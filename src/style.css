@@ -127,6 +127,7 @@ body {
     color: #ffffff;
     line-height: 1.6;
     font-size: 16px;
+    padding-top: 60px; /* 添加与header高度相同的内边距，避免内容被遮挡 */
 }
 
 /* 页面头部的基础样式 */
@@ -138,7 +139,14 @@ header {
     padding: 10px 10px;
     border-bottom: 1px solid #292929;
     gap: 10px;
-    position: relative;
+    position: fixed; /* 改为固定定位 */
+    top: 0; /* 固定在顶部 */
+    left: 0; /* 确保左边缘对齐 */
+    right: 0; /* 确保右边缘对齐 */
+    z-index: 1000; /* 确保显示在其他元素上方 */
+    transition: all 0.3s ease; /* 添加平滑过渡效果 */
+    width: 100%; /* 设置宽度占满整个视口 */
+    box-sizing: border-box; /* 确保padding不会增加总宽度 */
 }
 
 /* Logo容器的样式，用于包裹Logo相关的元素 */
@@ -268,12 +276,27 @@ nav ul li a.active {
     height: 3px;
     width: 100%;
     background-color: #ff9900;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* 汉堡菜单图标悬浮时的横条样式 */
 .hamburger-menu:hover span {
     background-color: #ffa31a;
+}
+
+/* 汉堡菜单激活状态 - 第一条线旋转 */
+.hamburger-menu.active span:first-child {
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+/* 汉堡菜单激活状态 - 中间线消失 */
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+/* 汉堡菜单激活状态 - 第三条线旋转 */
+.hamburger-menu.active span:last-child {
+    transform: translateY(-7.5px) rotate(-45deg);
 }
 
 /* 桌面导航按钮（包裹汉堡菜单）的样式 */
@@ -1140,4 +1163,99 @@ a {
 
 .disclaimer strong {
     color: #ff9900;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    position: fixed;
+    left: -280px; /* 初始位置在屏幕外 */
+    top: 0; /* 从屏幕顶部开始 */
+    width: 280px;
+    height: 100vh; /* 占据整个视口高度 */
+    background-color: #1b1b1b;
+    border-right: 1px solid #292929;
+    z-index: 999;
+    transition: left 0.3s ease;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    
+    /* 隐藏滚动条 - Firefox */
+    scrollbar-width: none;
+    
+    /* 隐藏滚动条 - IE和旧版Edge */
+    -ms-overflow-style: none;
+}
+
+/* 隐藏滚动条 - Webkit浏览器 (Chrome, Safari, Edge等) */
+.sidebar::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+    display: none;
+}
+
+/* 为侧边栏内容添加顶部内边距，避免被顶栏遮挡 */
+.sidebar-menu:first-child {
+    margin-top: 60px; /* 与顶栏高度一致 */
+}
+
+/* 侧边栏打开时 */
+.sidebar.open {
+    left: 0;
+}
+
+/* 侧边栏遮罩层 */
+.sidebar-overlay {
+    position: fixed;
+    top: 0; /* 从屏幕顶部开始 */
+    left: 0;
+    width: 100%;
+    height: 100vh; /* 占据整个视口高度 */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none;
+}
+
+/* 遮罩层显示 */
+.sidebar-overlay.show {
+    display: block;
+}
+
+/* 侧边栏菜单项样式 */
+.sidebar-menu {
+    padding: 12px 0;
+}
+
+.sidebar-menu-item {
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-menu-item:hover {
+    background-color: #292929;
+}
+
+.sidebar-menu-item.active {
+    background-color: #303030;
+}
+
+.sidebar-menu-icon {
+    margin-right: 24px;
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+    color: #ff9900;
+}
+
+.sidebar-section-title {
+    padding: 16px 24px 8px;
+    color: #aaaaaa;
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 1px solid #292929;
+    margin-top: 8px;
 }
