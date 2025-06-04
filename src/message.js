@@ -177,7 +177,7 @@ function sendMessage() {
     // 更新联系人的最后一条消息
     updateContactLastMessage(document.querySelector(`.contact[data-userid="${currentContactId}"]`), message);
     
-    // 如果是与Gemini 2.5 Pro聊天，则通过LM Studio API获取回复
+    // 如果是与Gemma3聊天，则通过LM Studio API获取回复
     if (currentContactId === "1") {
         // 显示"正在输入..."提示
         showTypingIndicator();
@@ -200,7 +200,7 @@ function showTypingIndicator() {
     
     typingDiv.innerHTML = `
         <div class="message-avatar">
-            <img src="../res/images/gemini.png" alt="Gemini 2.5 Pro">
+            <img src="../res/images/gemini.png" alt="Gemma3">
         </div>
         <div class="message-content">
             <div class="message-bubble">
@@ -231,10 +231,10 @@ async function getLMStudioResponse(message) {
         // 准备发送给LLM的消息历史
         const messages = [];
         
-        // 添加系统提示，设定角色为"Gemini 2.5 Pro"
+        // 添加系统提示，设定角色为"Gemma3"
         messages.push({
             role: "system",
-            content: "你是一个名叫'Gemini 2.5 Pro'的AI助手，正在B站风格的聊天应用中与用户交流。请保持友好、活泼的语气，回答简洁但有帮助性。你的回复将显示在一个聊天界面中，所以不需要过于冗长。"
+            content: "你是一个名叫'Gemma3'的AI助手，正在B站风格的聊天应用中与用户交流。请保持友好、活泼的语气，回答简洁但有帮助性。你的回复将显示在一个聊天界面中，所以不需要过于冗长。"
         });
         
         // 添加之前的对话历史
@@ -311,7 +311,7 @@ async function getLMStudioResponse(message) {
         replyDiv.className = 'message received';
         replyDiv.innerHTML = `
             <div class="message-avatar">
-                <img src="../res/images/gemini.png" alt="Gemini 2.5 Pro">
+                <img src="../res/images/gemini.png" alt="Gemma3">
             </div>
             <div class="message-content">
                 <div class="message-bubble">
@@ -354,7 +354,7 @@ async function getLMStudioResponse(message) {
         errorDiv.className = 'message received error';
         errorDiv.innerHTML = `
             <div class="message-avatar">
-                <img src="../res/images/gemini.png" alt="Gemini 2.5 Pro">
+                <img src="../res/images/gemini.png" alt="Gemma3">
             </div>
             <div class="message-content">
                 <div class="message-bubble">
@@ -371,7 +371,7 @@ async function getLMStudioResponse(message) {
     }
 }
 
-// 模拟接收消息 (用于与非Gemini 2.5 Pro的联系人交流)
+// 模拟接收消息 (用于与非Gemma3的联系人交流)
 function simulateReply() {
     // 获取当前选中的联系人
     const activeContact = document.querySelector('.contact.active');

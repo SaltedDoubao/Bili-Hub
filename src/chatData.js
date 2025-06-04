@@ -1,6 +1,6 @@
 // 用于存储每个联系人的聊天记录
 const chatHistory = {
-    // Gemini 2.5 Pro的聊天记录(ID: 1) - 将连接到LM Studio
+    // Gemma3的聊天记录(ID: 1) - 将连接到LM Studio
     "1": [
         {
             type: 'date',
@@ -8,7 +8,7 @@ const chatHistory = {
         },
         {
             type: 'received', 
-            text: '你好，我是Gemini 2.5 Pro，一个AI助手。有什么我可以帮助你的吗？', 
+            text: '你好，我是Gemma3，一个AI助手。有什么我可以帮助你的吗？', 
             time: '12:25',
             avatar: '../res/images/gemini.png',
             role: 'assistant'
