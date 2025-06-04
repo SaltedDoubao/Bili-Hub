@@ -1,0 +1,582 @@
+/* 主体内容区域 - 设置最大宽度和居中 */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* 用户信息头部区域 */
+.user-profile-header {
+    width: 100%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* 用户封面图样式 */
+.user-cover-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px 8px 0 0;
+}
+
+.user-cover-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.85);
+}
+
+/* 用户资料卡片样式 */
+.user-profile-card {
+    background-color: #1b1b1b;
+    border-radius: 0 0 8px 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 用户基本信息区域 */
+.user-profile-info {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #292929;
+}
+
+/* 大头像样式 */
+.user-avatar-large {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #ff9900;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.user-avatar-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 用户信息容器 */
+.user-info-container {
+    flex-grow: 1;
+}
+
+/* 用户名样式 */
+.username-large {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 8px;
+    color: #ffffff;
+}
+
+/* 用户等级信息 */
+.user-level-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* 等级标签 */
+.level-tag {
+    background-color: #00a0d6;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+/* 会员标签 */
+.vip-tag {
+    background-color: #ff9900;
+    color: #000000;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* 用户ID标签 */
+.user-id-tag {
+    color: #808080;
+    font-size: 12px;
+}
+
+/* 用户签名 */
+.user-signature {
+    color: #cccccc;
+    font-size: 14px;
+}
+
+/* 关注按钮容器 */
+.follow-btn-container {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+/* 关注按钮样式 */
+.follow-btn {
+    background-color: #ff9900;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.follow-btn:hover {
+    background-color: #e69500;
+}
+
+/* 私信按钮样式 */
+.message-btn {
+    background-color: #292929;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.message-btn:hover {
+    background-color: #3a3a3a;
+}
+
+/* 用户统计数据 */
+.user-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0 0;
+}
+
+/* 统计项样式 */
+.stat-item {
+    text-align: center;
+}
+
+/* 统计数值 */
+.stat-value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+/* 统计标签 */
+.stat-label {
+    font-size: 14px;
+    color: #999999;
+}
+
+/* 用户内容导航栏 */
+.user-content-nav {
+    background-color: #1b1b1b;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 导航容器 */
+.user-nav-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 0 20px;
+    scrollbar-width: none; /* Firefox */
+}
+
+/* 隐藏滚动条 */
+.user-nav-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* 导航项样式 */
+.user-nav-item {
+    padding: 16px 20px;
+    color: #cccccc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+/* 导航项悬浮效果 */
+.user-nav-item:hover {
+    color: #ffffff;
+}
+
+/* 激活状态的导航项 */
+.user-nav-item.active {
+    color: #ff9900;
+}
+
+/* 激活状态下导航项底部线条 */
+.user-nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 60%;
+    height: 3px;
+    background-color: #ff9900;
+    border-radius: 3px;
+}
+
+/* 用户内容区域 */
+.user-content {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 20px;
+}
+
+/* 主内容区 */
+.user-content-main {
+    background-color: #1b1b1b;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 置顶视频区域 */
+.pinned-video-section {
+    margin-bottom: 30px;
+}
+
+/* 区块标题样式 */
+.section-title {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 区块标题图标 */
+.section-icon {
+    font-size: 18px;
+}
+
+/* 置顶视频卡片 */
+.pinned-video-card {
+    display: flex;
+    background-color: #252525;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* 视频预览 */
+.video-preview {
+    width: 240px;
+    height: 135px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.video-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 视频时长标签 */
+.video-duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+/* 视频信息 */
+.pinned-video-card .video-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 视频标题 */
+.pinned-video-card .video-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 10px;
+}
+
+/* 视频元数据 */
+.pinned-video-card .video-meta {
+    font-size: 13px;
+    color: #808080;
+}
+
+/* 视频元数据项 */
+.video-meta span {
+    margin-right: 15px;
+}
+
+/* 最近投稿区域 */
+.recent-uploads-section {
+    margin-bottom: 30px;
+}
+
+/* 视频网格 */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* 查看更多按钮容器 */
+.view-more {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 查看更多按钮 */
+.view-more-btn {
+    display: inline-block;
+    background-color: #252525;
+    color: #999999;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-more-btn:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* 合集区域 */
+.collections-section {
+    margin-bottom: 20px;
+}
+
+/* 合集卡片容器 */
+.collection-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* 合集卡片 */
+.collection-card {
+    background-color: #252525;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+/* 合集封面 */
+.collection-cover {
+    width: 100%;
+    height: 120px;
+    position: relative;
+}
+
+.collection-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 合集视频数量标签 */
+.collection-count {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    padding: 2px 6px;
+    font-size: 12px;
+    border-radius: 2px;
+}
+
+/* 合集信息 */
+.collection-info {
+    padding: 10px;
+}
+
+/* 合集标题 */
+.collection-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0 0 5px;
+}
+
+/* 合集元数据 */
+.collection-meta {
+    font-size: 12px;
+    color: #808080;
+}
+
+/* 右侧边栏 */
+.user-content-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 侧边栏卡片基础样式 */
+.about-me-card,
+.achievements-card,
+.tags-card {
+    background-color: #1b1b1b;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 侧边栏卡片标题 */
+.sidebar-card-title {
+    font-size: 16px;
+    color: #ffffff;
+    margin: 0 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #292929;
+}
+
+/* 关于我内容 */
+.about-me-content {
+    font-size: 14px;
+}
+
+/* 关于我条目 */
+.about-me-item {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+/* 关于我标签 */
+.about-me-label {
+    color: #999999;
+    width: 80px;
+    flex-shrink: 0;
+}
+
+/* 关于我值 */
+.about-me-value {
+    color: #ffffff;
+}
+
+/* 成就内容 */
+.achievements-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* 成就项 */
+.achievement-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #252525;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+/* 成就图标 */
+.achievement-icon {
+    font-size: 18px;
+}
+
+/* 成就名称 */
+.achievement-name {
+    font-size: 13px;
+    color: #ffffff;
+}
+
+/* 标签内容 */
+.tags-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* 用户标签 */
+.user-tag {
+    background-color: #252525;
+    color: #ff9900;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.user-tag:hover {
+    background-color: #ff9900;
+    color: #000000;
+}
+
+/* 响应式布局 */
+@media (max-width: 1024px) {
+    .user-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .user-profile-info {
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 70px;
+    }
+    
+    .user-avatar-large {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .follow-btn-container {
+        bottom: 15px;
+        top: auto;
+        right: 50%;
+        transform: translateX(50%);
+    }
+    
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .pinned-video-card {
+        flex-direction: column;
+    }
+    
+    .video-preview {
+        width: 100%;
+        height: auto;
+        padding-top: 56.25%; /* 16:9 比例 */
+    }
+    
+    .collection-cards {
+        grid-template-columns: 1fr;
+    }
+} 

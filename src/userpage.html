@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <title>Userpage - Bili-Hub</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="userpage.css" rel="stylesheet" type="text/css">
+    <script src="search.js" defer></script>
+</head>
+
+<body>
+    <!-- 页面头部 - 包含导航栏、搜索框和用户信息 -->
+    <header>
+        <!-- LOGO区域 - 左侧汉堡菜单和LOGO标志 -->
+        <div class="logo-container">
+            <button id="desktopNavigation" type="button" aria-label="Desktop Navigation">
+                <div class="hamburger-menu" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="ph-logo">
+                <span class="ph-logo-porn">Bili</span><span class="ph-logo-hub">Hub</span>
+            </div>
+        </div>
+
+        <!-- 左侧导航菜单 - 首页、分类、频道等 -->
+        <nav class="nav-ul-left">
+            <ul>
+                <li class="dropdown">
+                    <a href="/src/index.html">首页</a>
+
+                    <div class="dropdown-content multi-column">
+                        <!-- 首页下拉菜单 - 分为5列显示不同分类 -->
+                        <div class="column">
+                            <a href="https://www.bilibili.com/anime/" target="_blank">🎬 番剧</a>
+                            <a href="https://www.bilibili.com/movie/" target="_blank">🎦 电影</a>
+                            <a href="https://www.bilibili.com/guochuang/" target="_blank">🎨 国创</a>
+                            <a href="https://www.bilibili.com/tv/" target="_blank">📺 电视剧</a>
+                            <a href="https://www.bilibili.com/variety/" target="_blank">🎭 综艺</a>
+                            <a href="https://www.bilibili.com/documentary/" target="_blank">📹 纪录片</a>
+                            <a href="https://www.bilibili.com/c/douga/" target="_blank">🎮 动画</a>
+                            <a href="https://www.bilibili.com/c/game/" target="_blank">🎲 游戏</a>
+                            <a href="https://www.bilibili.com/c/kichiku/" target="_blank">🎵 鬼畜</a>
+                            <a href="https://www.bilibili.com/c/music/" target="_blank">🎼 音乐</a>
+                        </div>
+                        <div class="column">
+                            <a href="https://www.bilibili.com/c/dance/" target="_blank">💃 舞蹈</a>
+                            <a href="https://www.bilibili.com/c/cinephile/" target="_blank">🎥 影视</a>
+                            <a href="https://www.bilibili.com/c/ent/" target="_blank">🎪 娱乐</a>
+                            <a href="https://www.bilibili.com/c/knowledge/" target="_blank">📚 知识</a>
+                            <a href="https://www.bilibili.com/c/tech/" target="_blank">📱 科技数码</a>
+                            <a href="https://www.bilibili.com/c/information/" target="_blank">📰 资讯</a>
+                            <a href="https://www.bilibili.com/c/food/" target="_blank">🍜 美食</a>
+                            <a href="https://www.bilibili.com/c/shortplay/" target="_blank">🎭 小剧场</a>
+                            <a href="https://www.bilibili.com/c/car/" target="_blank">🚗 汽车</a>
+                            <a href="https://www.bilibili.com/c/fashion/" target="_blank">💄 时尚美妆</a>
+                        </div>
+                        <div class="column">
+                            <a href="https://www.bilibili.com/c/sports/" target="_blank">⚽ 体育运动</a>
+                            <a href="https://www.bilibili.com/c/animal/" target="_blank">🐾 动物</a>
+                            <a href="https://www.bilibili.com/c/vlog/" target="_blank">📽️ vlog</a>
+                            <a href="https://www.bilibili.com/c/painting/" target="_blank">🎨 绘画</a>
+                            <a href="https://www.bilibili.com/c/ai/" target="_blank">🤖 人工智能</a>
+                            <a href="https://www.bilibili.com/c/home/" target="_blank">🏠 家装房产</a>
+                            <a href="https://www.bilibili.com/c/outdoors/" target="_blank">👟 户外潮流</a>
+                            <a href="https://www.bilibili.com/c/gym/" target="_blank">💪 健身</a>
+                            <a href="https://www.bilibili.com/c/handmake/" target="_blank">🎨 手工</a>
+                            <a href="https://www.bilibili.com/c/travel/" target="_blank">✈️ 旅游出行</a>
+                        </div>
+                        <div class="column">
+                            <a href="https://www.bilibili.com/c/rural/" target="_blank">🌾 三农</a>
+                            <a href="https://www.bilibili.com/c/parenting/" target="_blank">👶 亲子</a>
+                            <a href="https://www.bilibili.com/c/health/" target="_blank">❤️ 健康</a>
+                            <a href="https://www.bilibili.com/c/emotion/" target="_blank">💝 情感</a>
+                            <a href="https://www.bilibili.com/c/life_joy/" target="_blank">🎯 生活兴趣</a>
+                            <a href="https://www.bilibili.com/c/life_experience/" target="_blank">📝 生活经验</a>
+                            <a href="https://love.bilibili.com/" target="_blank">🤝 公益</a>
+                            <a href="https://www.bilibili.com/blackboard/era/Vp41b8bsU9Wkog3X.html" target="_blank">🎞️
+                                超高清</a>
+                        </div>
+                        <div class="column">
+                            <a href="https://www.bilibili.com/read/home/" target="_blank">📑 专栏</a>
+                            <a href="https://live.bilibili.com/" target="_blank">🎥 直播</a>
+                            <a href="https://www.bilibili.com/blackboard/activity-list.html?" target="_blank">🎪 活动</a>
+                            <a href="https://www.bilibili.com/cheese/" target="_blank">📚 课堂</a>
+                            <a href="https://www.bilibili.com/blackboard/activity-5zJxM3spoS.html" target="_blank">👥
+                                社区中心</a>
+                            <a href="https://music.bilibili.com/pc/music-center/" target="_blank">🎵 新歌热榜</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="dropdown"><a href="">番剧</a></li>
+                <li class="dropdown"><a href="">直播</a></li>
+                <li class="dropdown"><a href="">游戏中心</a></li>
+                <li class="dropdown"><a href="">会员购</a></li>
+                <li class="dropdown"><a href="">漫画</a></li>
+                <li class="dropdown"><a href="">赛事</a></li>
+            </ul>
+        </nav>
+
+        <!-- 搜索框区域 - 中间的搜索功能 -->
+        <form class="search-bar" action="#" method="get" onsubmit="return handleSearch(event)">
+            <input type="text" name="keyword" id="searchInput" placeholder="搜索视频..." required>
+            <button type="submit">搜索</button>
+        </form>
+        <div class="search-dropdown">
+            <!-- 搜索历史下拉框 -->
+        </div>
+
+        <!-- 右侧导航菜单 - 大会员、消息、动态等功能 -->
+        <nav class="nav-ul-right">
+            <ul>
+                <li class="dropdown"><a href="">大会员</a></li>
+                <li class="dropdown">
+                    <a href="" target="_blank">消息</a>
+                    <div class="dropdown-content">
+                        <a href="" target="_blank">回复我的</a>
+                        <a href="" target="_blank">@我的</a>
+                        <a href="" target="_blank">收到的赞</a>
+                        <a href="" target="_blank">系统消息</a>
+                        <a href="" target="_blank">我的消息</a>
+                </li>
+                <li class="dropdown"><a href="" target="_blank">动态</a></li>
+                <li class="dropdown"><a href="">收藏</a></li>
+                <li class="dropdown"><a href="" target="_blank">历史</a></li>
+                <li class="dropdown"><a href="" target="_blank">创作中心</a></li>
+                <li class="dropdown">
+                    <a href="" target="_blank">投稿</a>
+                    <div class="dropdown-content">
+                        <a href="" target="_blank">专栏投稿</a>
+                        <a href="" target="_blank">音频投稿</a>
+                        <a href="" target="_blank">贴纸投稿</a>
+                        <a href="" target="_blank">视频投稿</a>
+                        <a href="" target="_blank">投稿管理</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- 用户头像区域 - 右侧用户信息和下拉菜单 -->
+        <div class="avatar-info dropdown">
+            <!-- 用户头像区域由script.js动态控制 -->
+            <div id="avatar-dropdown" class="avatar-dropdown">
+                <!-- 动态内容将由script.js填充 -->
+            </div>
+        </div>
+    </header>
+
+    <!-- 左侧边栏 -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-menu">
+            <a href="/src/index.html" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🏠</span>
+                <span>首页</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🔥</span>
+                <span>热门</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">✨</span>
+                <span>动态</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">📚</span>
+                <span>订阅</span>
+            </a>
+        </div>
+
+        <div class="sidebar-section-title">探索</div>
+        <div class="sidebar-menu">
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">📺</span>
+                <span>番剧</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🎬</span>
+                <span>电影</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🎮</span>
+                <span>游戏</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🎵</span>
+                <span>音乐</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🎭</span>
+                <span>鬼畜</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">💄</span>
+                <span>时尚</span>
+            </a>
+        </div>
+
+        <div class="sidebar-section-title">更多分类</div>
+        <div class="sidebar-menu">
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">📱</span>
+                <span>科技</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🍕</span>
+                <span>美食</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">✈️</span>
+                <span>旅游</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">💡</span>
+                <span>知识</span>
+            </a>
+        </div>
+
+        <div class="sidebar-section-title">频道</div>
+        <div class="sidebar-menu">
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">📺</span>
+                <span>直播</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🌟</span>
+                <span>精选</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- 侧边栏遮罩层 -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- 页面主体内容区域 - 用户页面 -->
+    <main>
+        <!-- 用户信息头部 -->
+        <div class="user-profile-header">
+            <div class="user-cover-image">
+                <!-- 用户背景图 -->
+                <img src="../res/images/user-cover.png" alt="用户封面图">
+            </div>
+
+            <div class="user-profile-card">
+                <div class="user-profile-info">
+                    <!-- 用户头像 -->
+                    <div class="user-avatar-large">
+                        <img src="../res/images/avatar.png" alt="用户头像">
+                    </div>
+
+                    <!-- 用户基本信息 -->
+                    <div class="user-info-container">
+                        <h1 class="username-large">椒盐豆包</h1>
+                        <div class="user-level-info">
+                            <span class="level-tag">Lv.6</span>
+                            <span class="vip-tag">大会员</span>
+                            <span class="user-id-tag">UID: 498891142</span>
+                        </div>
+                        <div class="user-signature">
+                            这个人很神秘，什么都没有写
+                        </div>
+                    </div>
+
+                    <!-- 关注按钮 -->
+                    <div class="follow-btn-container">
+                        <button class="follow-btn">
+                            <span class="follow-icon">+</span>
+                            <span>关注</span>
+                        </button>
+                        <button class="message-btn">私信</button>
+                    </div>
+                </div>
+
+                <!-- 用户数据统计 -->
+                <div class="user-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">42</div>
+                        <div class="stat-label">关注数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">128</div>
+                        <div class="stat-label">粉丝数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">1024</div>
+                        <div class="stat-label">获赞数</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">32.4万</div>
+                        <div class="stat-label">播放量</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">256</div>
+                        <div class="stat-label">阅读量</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 用户内容导航栏 -->
+        <div class="user-content-nav">
+            <div class="user-nav-container">
+                <a href="#" class="user-nav-item active">主页</a>
+                <a href="#" class="user-nav-item">动态</a>
+                <a href="#" class="user-nav-item">视频</a>
+                <a href="#" class="user-nav-item">专栏</a>
+                <a href="#" class="user-nav-item">收藏</a>
+                <a href="#" class="user-nav-item">投稿</a>
+                <a href="#" class="user-nav-item">订阅</a>
+                <a href="#" class="user-nav-item">勋章</a>
+            </div>
+        </div>
+
+        <!-- 用户内容区域 -->
+        <div class="user-content">
+            <!-- 左侧内容主区域 -->
+            <div class="user-content-main">
+                <!-- 用户置顶视频 -->
+                <div class="pinned-video-section">
+                    <h3 class="section-title">
+                        <span class="section-icon">📌</span>
+                        置顶视频
+                    </h3>
+                    <div class="pinned-video-card">
+                        <div class="video-preview">
+                            <img src="../res/images/eb0c597deca8151cfbe4f1807755141e42a10a92.jpg" alt="置顶视频缩略图">
+                            <div class="video-duration">15:42</div>
+                        </div>
+                        <div class="video-info">
+                            <h4 class="video-title">队友让我别起错觉了</h4>
+                            <div class="video-meta">
+                                <span class="video-plays">2.5万播放</span>
+                                <span class="video-date">2023-12-25</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 最近投稿 -->
+                <div class="recent-uploads-section">
+                    <h3 class="section-title">最近投稿</h3>
+                    <div class="video-grid">
+                        <!-- 视频卡片1 -->
+                        <div class="video-card">
+                            <a href="#" class="thumbnail-link">
+                                <img src="../res/images/cyberpunk2077.png" alt="视频封面">
+                                <span class="duration">07:21</span>
+                            </a>
+                            <div class="video-info">
+                                <h3 class="video-title">
+                                    <a href="#">"早上好，夜之城"</a>
+                                </h3>
+                                <div class="video-meta">
+                                    <span class="views">456K 次观看</span>
+                                    <span class="upload-time">5 天前</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 视频卡片2 -->
+                        <div class="video-card">
+                            <a href="#" class="thumbnail-link">
+                                <img src="../res/images/5242750857121e05146d5d5b13a47a2a6dd36e98.jpg" alt="视频封面">
+                                <span class="duration">03:33</span>
+                            </a>
+                            <div class="video-info">
+                                <h3 class="video-title">
+                                    <a href="#">自觉点进来受骗</a>
+                                </h3>
+                                <div class="video-meta">
+                                    <span class="views">92.1K 次观看</span>
+                                    <span class="upload-time">2 周前</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 视频卡片3 -->
+                        <div class="video-card">
+                            <a href="#" class="thumbnail-link">
+                                <img src="../res/images/b1a07a8baefa0694760cd6d99f212bee45d1333d.jpg" alt="视频封面">
+                                <span class="duration">02:26</span>
+                            </a>
+                            <div class="video-info">
+                                <h3 class="video-title">
+                                    <a href="#">敢杀我的马?!</a>
+                                </h3>
+                                <div class="video-meta">
+                                    <span class="views">28.5K 次观看</span>
+                                    <span class="upload-time">1 个月前</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- "查看更多"按钮 -->
+                    <div class="view-more">
+                        <a href="#" class="view-more-btn">查看更多</a>
+                    </div>
+                </div>
+
+                <!-- 合集 -->
+                <div class="collections-section">
+                    <h3 class="section-title">我的合集</h3>
+                    <div class="collection-cards">
+                        <div class="collection-card">
+                            <div class="collection-cover">
+                                <img src="../res/images/fed63f41d3e153d13534f7b8b022f927e8f1aebc.jpg" alt="合集封面">
+                                <div class="collection-count">32个视频</div>
+                            </div>
+                            <div class="collection-info">
+                                <h4 class="collection-title">动画精选</h4>
+                                <div class="collection-meta">
+                                    <span class="collection-plays">128万总播放</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="collection-card">
+                            <div class="collection-cover">
+                                <img src="../res/images/60bc3bba0b04d62ffa37f7f7e360d4c8f968d643.jpg" alt="合集封面">
+                                <div class="collection-count">16个视频</div>
+                            </div>
+                            <div class="collection-info">
+                                <h4 class="collection-title">游戏实况</h4>
+                                <div class="collection-meta">
+                                    <span class="collection-plays">48.2万总播放</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧边栏 -->
+            <div class="user-content-sidebar">
+                <!-- 关于我 -->
+                <div class="about-me-card">
+                    <h3 class="sidebar-card-title">关于我</h3>
+                    <div class="about-me-content">
+                        <div class="about-me-item">
+                            <span class="about-me-label">性别：</span>
+                            <span class="about-me-value">保密</span>
+                        </div>
+                        <div class="about-me-item">
+                            <span class="about-me-label">地区：</span>
+                            <span class="about-me-value">中国</span>
+                        </div>
+                        <div class="about-me-item">
+                            <span class="about-me-label">注册时间：</span>
+                            <span class="about-me-value">2020-06-12</span>
+                        </div>
+                        <div class="about-me-item">
+                            <span class="about-me-label">生日：</span>
+                            <span class="about-me-value">01-01</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 成就 -->
+                <div class="achievements-card">
+                    <h3 class="sidebar-card-title">我的成就</h3>
+                    <div class="achievements-content">
+                        <div class="achievement-item">
+                            <span class="achievement-icon">🏆</span>
+                            <span class="achievement-name">创作激励</span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-icon">🏅</span>
+                            <span class="achievement-name">年度新人</span>
+                        </div>
+                        <div class="achievement-item">
+                            <span class="achievement-icon">🎖️</span>
+                            <span class="achievement-name">热门视频</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 标签 -->
+                <div class="tags-card">
+                    <h3 class="sidebar-card-title">我的标签</h3>
+                    <div class="tags-content">
+                        <span class="user-tag">游戏</span>
+                        <span class="user-tag">动画</span>
+                        <span class="user-tag">编程</span>
+                        <span class="user-tag">音乐</span>
+                        <span class="user-tag">美食</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页面底部 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>bilibili</h4>
+                <ul>
+                    <li><a href="">关于我们</a></li>
+                    <li><a href="">加入我们</a></li>
+                    <li><a href="">bilibili认证</a></li>
+                    <li><a href="">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>bilibili创作</h4>
+                <ul>
+                    <li><a href="">专栏投稿</a></li>
+                    <li><a href="">音频投稿</a></li>
+                    <li><a href="">视频投稿</a></li>
+                    <li><a href="">创作激励</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="">常见问题</a></li>
+                    <li><a href="">侵权申诉</a></li>
+                    <li><a href="">会员服务</a></li>
+                    <li><a href="">客服中心</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>更多</h4>
+                <ul class="social-links">
+                    <li><a href="">活动中心</a></li>
+                    <li><a href="">课堂</a></li>
+                    <li><a href="">专题中心</a></li>
+                    <li><a href="">用户反馈</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bili-Hub "版权所有"</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript文件引用 -->
+    <script src="./script.js"></script>
+    <script src="./userpage.js"></script>
+</body>
+
+</html>

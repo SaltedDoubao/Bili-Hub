@@ -264,21 +264,21 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                         <div class="menu-group">
-                            <a href="https://space.bilibili.com/" target="_blank">
+                            <a href="./userpage.html">
                                 <i class="menu-icon">👤</i>个人中心
                             </a>
-                            <a href="https://account.bilibili.com/account/home" target="_blank">
+                            <a href="" target="_blank">
                                 <i class="menu-icon">⚙️</i>账号设置
                             </a>
-                            <a href="https://pay.bilibili.com/" target="_blank">
+                            <a href="" target="_blank">
                                 <i class="menu-icon">💰</i>我的钱包
                             </a>
                         </div>
                         <div class="menu-group">
-                            <a href="https://big.bilibili.com/" target="_blank">
+                            <a href="" target="_blank">
                                 <i class="menu-icon">🏆</i>成为大会员
                             </a>
-                            <a href="https://www.bilibili.com/blackboard/help.html" target="_blank">
+                            <a href="" target="_blank">
                                 <i class="menu-icon">❓</i>帮助中心
                             </a>
                         </div>

@@ -130,6 +130,15 @@ body {
     padding-top: 60px; /* 添加与header高度相同的内边距，避免内容被遮挡 */
 }
 
+/* 主体内容区域 - 设置最大宽度和居中 */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 /* 页面头部的基础样式 */
 header {
     display: flex;
@@ -873,6 +882,9 @@ footer {
     margin-bottom: 20px;
     text-align: center;
     padding: 0 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* 页脚主要内容区域（包含多列链接）的样式 */
@@ -881,7 +893,7 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     gap: 60px;
-    max-width: 1440px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -932,6 +944,8 @@ footer {
     padding-top: 20px;
     border-top: 1px solid #292929;
     font-size: 0.85rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* 全局链接的基础样式 */

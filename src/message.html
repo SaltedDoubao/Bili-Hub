@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <title>私信 - Bili-Hub</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="message.css" rel="stylesheet" type="text/css">
+    <script src="search.js" defer></script>
+</head>
+
+<body>
+    <!-- 页面头部 - 包含导航栏、搜索框和用户信息 -->
+    <header>
+        <!-- LOGO区域 - 左侧汉堡菜单和LOGO标志 -->
+        <div class="logo-container">
+            <button id="desktopNavigation" type="button" aria-label="Desktop Navigation">
+                <div class="hamburger-menu" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="ph-logo">
+                <span class="ph-logo-porn">Bili</span><span class="ph-logo-hub">Hub</span>
+            </div>
+        </div>
+        
+        <!-- 左侧导航菜单 - 首页、分类、频道等 -->
+        <nav class="nav-ul-left">
+            <ul>
+                <li class="dropdown">
+                    <a href="/src/index.html">首页</a>
+                    <div class="dropdown-content multi-column">
+                        <!-- 首页下拉菜单略 -->
+                    </div>
+                </li>
+                <li class="dropdown"><a href="">番剧</a></li>
+                <li class="dropdown"><a href="">直播</a></li>
+                <li class="dropdown"><a href="">游戏中心</a></li>
+                <li class="dropdown"><a href="">会员购</a></li>
+                <li class="dropdown"><a href="">漫画</a></li>
+                <li class="dropdown"><a href="">赛事</a></li>
+            </ul>
+        </nav>
+        
+        <!-- 搜索框区域 - 中间的搜索功能 -->
+        <form class="search-bar" action="#" method="get" onsubmit="return handleSearch(event)">
+            <input type="text" name="keyword" id="searchInput" placeholder="搜索视频..." required>
+            <button type="submit">搜索</button>
+        </form>
+        <div class="search-dropdown">
+            <!-- 搜索历史下拉框 -->
+        </div>
+        
+        <!-- 右侧导航菜单 - 大会员、消息、动态等功能 -->
+        <nav class="nav-ul-right">
+            <ul>
+                <li class="dropdown"><a href="">大会员</a></li>
+                <li class="dropdown">
+                    <a href="message.html">消息</a>
+                    <div class="dropdown-content">
+                        <a href="">回复我的</a>
+                        <a href="">@我的</a>
+                        <a href="">收到的赞</a>
+                        <a href="">系统消息</a>
+                        <a href="message.html">我的私信</a>
+                </li>
+                <li class="dropdown"><a href="">动态</a></li>
+                <li class="dropdown"><a href="">收藏</a></li>
+                <li class="dropdown"><a href="">历史</a></li>
+                <li class="dropdown"><a href="">创作中心</a></li>
+                <li class="dropdown"><a href="">投稿</a></li>
+            </ul>
+        </nav>
+        
+        <!-- 用户头像区域 - 右侧用户信息和下拉菜单 -->
+        <div class="avatar-info dropdown">
+            <!-- 用户头像区域由script.js动态控制 -->
+            <div id="avatar-dropdown" class="avatar-dropdown">
+                <!-- 动态内容将由script.js填充 -->
+            </div>
+        </div>
+    </header>
+
+    <!-- 左侧边栏 -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-menu">
+            <a href="/src/index.html" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🏠</span>
+                <span>首页</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🔥</span>
+                <span>热门</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">✨</span>
+                <span>动态</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">📚</span>
+                <span>订阅</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-section-title">探索</div>
+        <div class="sidebar-menu">
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">📺</span>
+                <span>番剧</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🎬</span>
+                <span>电影</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🎮</span>
+                <span>游戏</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🎵</span>
+                <span>音乐</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🎭</span>
+                <span>鬼畜</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">💄</span>
+                <span>时尚</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-section-title">更多分类</div>
+        <div class="sidebar-menu">
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">📱</span>
+                <span>科技</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🍕</span>
+                <span>美食</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">✈️</span>
+                <span>旅游</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">💡</span>
+                <span>知识</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-section-title">频道</div>
+        <div class="sidebar-menu">
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">📺</span>
+                <span>直播</span>
+            </a>
+            <a href="" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🌟</span>
+                <span>精选</span>
+            </a>
+        </div>
+    </aside>
+    
+    <!-- 侧边栏遮罩层 -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- 页面主体内容区域 - 私信页面 -->
+    <main>
+        <!-- 私信标题 -->
+        <div class="message-header">
+            <h1>我的私信</h1>
+        </div>
+        
+        <!-- 私信内容区域 -->
+        <div class="message-container">
+            <!-- 联系人列表区域 -->
+            <div class="contact-list">
+                <div class="contact-search">
+                    <input type="text" placeholder="搜索联系人..." id="contactSearch">
+                    <span class="search-icon">🔍</span>
+                </div>
+                
+                <!-- 联系人列表 -->
+                <div class="contacts">
+                    <div class="contact active" data-userid="1">
+                        <div class="contact-avatar">
+                            <img src="../res/images/gemini.png" alt="用户头像">
+                            <span class="status-badge online"></span>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-name">Gemini 2.5 Pro</div>
+                            <div class="contact-last-message">你好，我是Gemini 2.5 Pro，一个AI助手。有什么我可以帮助你的吗？</div>
+                        </div>
+                        <div class="contact-meta">
+                            <div class="contact-time">12:30</div>
+                            <div class="unread-badge">2</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact" data-userid="2">
+                        <div class="contact-avatar">
+                            <img src="../res/images/placeholder.png" alt="用户头像">
+                            <span class="status-badge offline"></span>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-name">B站用户</div>
+                            <div class="contact-last-message">谢谢关注！</div>
+                        </div>
+                        <div class="contact-meta">
+                            <div class="contact-time">昨天</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact" data-userid="3">
+                        <div class="contact-avatar">
+                            <img src="../res/images/placeholder.png" alt="用户头像">
+                            <span class="status-badge away"></span>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-name">哔哩哔哩官方</div>
+                            <div class="contact-last-message">您的投稿已通过审核</div>
+                        </div>
+                        <div class="contact-meta">
+                            <div class="contact-time">周一</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 更多联系人可以通过JavaScript动态添加 -->
+                </div>
+            </div>
+            
+            <!-- 聊天区域 -->
+            <div class="chat-area">
+                <!-- 聊天头部 - 显示当前聊天对象 -->
+                <div class="chat-header">
+                    <div class="chat-user-info">
+                        <img src="../res/images/gemini.png" alt="用户头像" class="chat-user-avatar">
+                        <div class="chat-user-details">
+                            <div class="chat-user-name">Gemini 2.5 Pro</div>
+                            <div class="chat-user-status">在线</div>
+                        </div>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="chat-action-btn" title="查看个人资料">
+                            <span class="action-icon">👤</span>
+                        </button>
+                        <button class="chat-action-btn" title="通话">
+                            <span class="action-icon">📞</span>
+                        </button>
+                        <button class="chat-action-btn" title="更多">
+                            <span class="action-icon">⋮</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- 聊天消息区域 -->
+                <div class="chat-messages" id="chatMessages">
+                    <!-- 聊天记录将由JS动态加载 -->
+                </div>
+                
+                <!-- 消息输入区域 -->
+                <div class="chat-input-area">
+                    <!-- 工具栏 -->
+                    <div class="chat-toolbar">
+                        <button class="toolbar-btn" title="发送表情">
+                            <span class="toolbar-icon">😊</span>
+                        </button>
+                        <button class="toolbar-btn" title="发送图片">
+                            <span class="toolbar-icon">🖼️</span>
+                        </button>
+                        <button class="toolbar-btn" title="发送文件">
+                            <span class="toolbar-icon">📎</span>
+                        </button>
+                    </div>
+                    
+                    <!-- 消息输入框 -->
+                    <div class="chat-input-container">
+                        <textarea id="messageInput" placeholder="发送消息..."></textarea>
+                        <button id="sendButton" class="send-button">发送</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 空状态提示 - 当没有选择联系人时显示 -->
+            <div class="chat-empty-state" style="display: none;">
+                <div class="empty-state-icon">💬</div>
+                <h3>暂无私信</h3>
+                <p>选择一个联系人开始聊天，或者添加新的联系人</p>
+                <button class="new-chat-btn">添加联系人</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页面底部 -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>bilibili</h4>
+                <ul>
+                    <li><a href="">关于我们</a></li>
+                    <li><a href="">加入我们</a></li>
+                    <li><a href="">bilibili认证</a></li>
+                    <li><a href="">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>bilibili创作</h4>
+                <ul>
+                    <li><a href="">专栏投稿</a></li>
+                    <li><a href="">音频投稿</a></li>
+                    <li><a href="">视频投稿</a></li>
+                    <li><a href="">创作激励</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="">常见问题</a></li>
+                    <li><a href="">侵权申诉</a></li>
+                    <li><a href="">会员服务</a></li>
+                    <li><a href="">客服中心</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>更多</h4>
+                <ul class="social-links">
+                    <li><a href="">活动中心</a></li>
+                    <li><a href="">课堂</a></li>
+                    <li><a href="">专题中心</a></li>
+                    <li><a href="">用户反馈</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bili-Hub "版权所有"</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript文件引用 -->
+    <script src="./script.js"></script>
+    <script src="./message.js" type="module"></script>
+</body>
+
+</html> 
