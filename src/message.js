@@ -21,7 +21,7 @@ const LM_STUDIO_API = 'http://127.0.0.1:1234/v1/chat/completions';
 const USE_CORS_PROXY = false; // 设为true启用
 const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
 // 方案2: 使用本地代理 (需要先运行: npx local-cors-proxy --proxyUrl http://127.0.0.1:1234 --port 8010)
-const USE_LOCAL_PROXY = false; // 设为true启用
+const USE_LOCAL_PROXY = true; // 设为true启用
 const LOCAL_PROXY_URL = 'http://localhost:8010/proxy';
 
 // 当前活动的联系人ID
