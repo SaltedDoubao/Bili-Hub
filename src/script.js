@@ -1,4 +1,61 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // 侧边栏控制
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    // 点击汉堡菜单切换侧边栏显示/隐藏
+    if (hamburger && sidebar && overlay) {
+        hamburger.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleSidebar();
+        });
+
+        // 点击遮罩层关闭侧边栏
+        overlay.addEventListener('click', function() {
+            closeSidebar();
+        });
+
+        // 按ESC键关闭侧边栏
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+                closeSidebar();
+            }
+        });
+    }
+
+    // 切换侧边栏显示/隐藏
+    function toggleSidebar() {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('show');
+        hamburger.classList.toggle('active');
+        document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+    }
+
+    // 关闭侧边栏
+    function closeSidebar() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('show');
+        hamburger.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // 添加滚动监听，控制顶栏样式
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            // 滚动超过50px时，改变顶栏样式
+            header.style.padding = '5px 10px'; // 缩小padding
+            header.style.background = 'rgba(27, 27, 27, 0.95)'; // 半透明背景
+            header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.5)'; // 添加阴影
+        } else {
+            // 恢复原始样式
+            header.style.padding = '10px 10px';
+            header.style.background = '#1b1b1b';
+            header.style.boxShadow = 'none';
+        }
+    });
+
     // 加载并初始化轮播图
     const loadCarouselData = function() {
         const carousel = document.querySelector('.carousel');
