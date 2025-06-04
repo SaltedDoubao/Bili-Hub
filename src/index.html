@@ -14,15 +14,13 @@
     <header>
         <!-- LOGO区域 - 左侧汉堡菜单和LOGO标志 -->
         <div class="logo-container">
-            <a href="../src/index.html" class="logo-text">
                 <button id="desktopNavigation" type="button" aria-label="Desktop Navigation">
-                    <div class="hamburger-menu">
+                    <div class="hamburger-menu" id="hamburger">
                         <span></span>
                         <span></span>
                         <span></span>
                     </div>
                 </button>
-            </a>
             <div class="ph-logo">
                 <span class="ph-logo-porn">Bili</span><span class="ph-logo-hub">Hub</span>
             </div>
@@ -149,6 +147,91 @@
             </div>
         </div>
     </header>
+
+    <!-- 左侧边栏 -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-menu">
+            <a href="/src/index.html" class="sidebar-menu-item active">
+                <span class="sidebar-menu-icon">🏠</span>
+                <span>首页</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🔥</span>
+                <span>热门</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">✨</span>
+                <span>动态</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">📚</span>
+                <span>订阅</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-section-title">探索</div>
+        <div class="sidebar-menu">
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">📺</span>
+                <span>番剧</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🎬</span>
+                <span>电影</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🎮</span>
+                <span>游戏</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🎵</span>
+                <span>音乐</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🎭</span>
+                <span>鬼畜</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">💄</span>
+                <span>时尚</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-section-title">更多分类</div>
+        <div class="sidebar-menu">
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">📱</span>
+                <span>科技</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🍕</span>
+                <span>美食</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">✈️</span>
+                <span>旅游</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">💡</span>
+                <span>知识</span>
+            </a>
+        </div>
+        
+        <div class="sidebar-section-title">频道</div>
+        <div class="sidebar-menu">
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">📺</span>
+                <span>直播</span>
+            </a>
+            <a href="#" class="sidebar-menu-item">
+                <span class="sidebar-menu-icon">🌟</span>
+                <span>精选</span>
+            </a>
+        </div>
+    </aside>
+    
+    <!-- 侧边栏遮罩层 -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
     <!-- 页面主体内容区域 -->
     <main>
