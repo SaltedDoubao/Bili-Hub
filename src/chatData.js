@@ -5,13 +5,6 @@ const chatHistory = {
         {
             type: 'date',
             content: '今天'
-        },
-        {
-            type: 'received', 
-            text: '你好，我是Gemma3，一个AI助手。有什么我可以帮助你的吗？', 
-            time: '12:25',
-            avatar: '../res/images/gemini.png',
-            role: 'assistant'
         }
     ],
     // B站用户的聊天记录(ID: 2)
@@ -49,11 +42,6 @@ const chatHistory = {
             text: '感谢您对平台的贡献，期待您的更多优质创作', 
             time: '09:31',
             avatar: '../res/images/placeholder.png'
-        },
-        {
-            type: 'sent', 
-            text: '谢谢官方的认可，我会继续努力创作的！', 
-            time: '10:15'
         }
     ]
 };

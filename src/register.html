@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 - Bili-Hub</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="logo-box">
+            <div class="logo-section">
+                <div class="ph-logo">
+                    <span class="ph-logo-porn">Bili</span><span class="ph-logo-hub">Bili</span>
+                </div>
+            </div>
+        </div>
+        <div class="login-box register-box">
+            <h2>用户注册</h2>
+            <div class="message-area"></div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="username">用户名:</label>
+                    <input type="text" id="username" name="username" placeholder="设置用户名 (3-20个字符)" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">密码:</label> 
+                    <input type="password" id="password" name="password" placeholder="设置密码 (6位以上)" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">确认密码:</label> 
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="再次输入密码" required>
+                </div>
+                <div class="form-group">
+                    <label for="nickname">昵称:</label>
+                    <input type="text" id="nickname" name="nickname" placeholder="设置昵称 (选填)">
+                </div>
+                <div class="form-group">
+                    <label for="email">邮箱:</label>
+                    <input type="email" id="email" name="email" placeholder="电子邮箱 (选填)">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="login-btn register-btn">注册账号</button>
+                </div>
+            </form>
+            <div class="extra-links">
+                <p>已有账号? <a href="./login.html">立即登录</a> | <a href="./index.html">返回首页</a></p>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./register.js"></script>
+</body>
+
+</html> 

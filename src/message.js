@@ -7,22 +7,15 @@ import {
     clearHistory
 } from './chatData.js';
 
+// 导入API服务模块
+import { getLMStudioResponse } from './apiService.js';
+
 // DOM元素
 const contactSearch = document.getElementById('contactSearch');
 const contacts = document.querySelectorAll('.contact');
 const sendButton = document.getElementById('sendButton');
 const messageInput = document.getElementById('messageInput');
 const chatMessages = document.getElementById('chatMessages');
-
-// LM Studio API配置
-const LM_STUDIO_API = 'http://127.0.0.1:1234/v1/chat/completions';
-// CORS代理设置 (可选两种方案)
-// 方案1: 使用公共CORS代理 (不推荐用于生产环境)
-const USE_CORS_PROXY = false; // 设为true启用
-const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
-// 方案2: 使用本地代理 (需要先运行: npx local-cors-proxy --proxyUrl http://127.0.0.1:1234 --port 8010)
-const USE_LOCAL_PROXY = true; // 设为true启用
-const LOCAL_PROXY_URL = 'http://localhost:8010/proxy';
 
 // 当前活动的联系人ID
 let currentContactId = "1";
@@ -177,19 +170,15 @@ function sendMessage() {
     // 更新联系人的最后一条消息
     updateContactLastMessage(document.querySelector(`.contact[data-userid="${currentContactId}"]`), message);
     
-    // 如果是与Gemma3聊天，则通过LM Studio API获取回复
-    if (currentContactId === "1") {
-        // 显示"正在输入..."提示
-        showTypingIndicator();
-        
-        // 调用LM Studio API获取回复
-        getLMStudioResponse(message);
-    } else {
-        // 其他联系人仍使用模拟回复
-        setTimeout(() => {
-            simulateReply();
-        }, 1000);
-    }
+    // 对所有联系人使用LM Studio API获取回复
+    // 显示"正在输入..."提示
+    showTypingIndicator();
+    
+    // 获取聊天历史
+    const history = getContactHistory(currentContactId);
+    
+    // 调用LM Studio API获取回复
+    handleLMStudioResponse(message, history);
 }
 
 // 显示"正在输入..."提示
@@ -225,68 +214,43 @@ function removeTypingIndicator() {
     }
 }
 
-// 使用LM Studio API获取回复
-async function getLMStudioResponse(message) {
+// 处理LM Studio API响应
+async function handleLMStudioResponse(message, history) {
     try {
-        // 准备发送给LLM的消息历史
-        const messages = [];
-        
-        // 添加系统提示，设定角色为"Gemma3"
-        messages.push({
-            role: "system",
-            content: "你是一个名叫'Gemma3'的AI助手，正在B站风格的聊天应用中与用户交流。请保持友好、活泼的语气，回答简洁但有帮助性。你的回复将显示在一个聊天界面中，所以不需要过于冗长。"
-        });
-        
-        // 添加之前的对话历史
-        const history = getContactHistory("1");
-        history.forEach(msg => {
-            if (msg.role && (msg.role === 'user' || msg.role === 'assistant')) {
-                messages.push({
-                    role: msg.role,
-                    content: msg.text
-                });
-            }
-        });
-        
-        // 发送请求到LM Studio API
-        const requestBody = {
-            messages: [{role: "user", content: message}],
-            model: "gemma-3-4b-it-qat",
-            max_tokens: 16384,
-            temperature: 0.9,
-            stream: false
-        };
-        
-        console.log("发送API请求:", JSON.stringify(requestBody));
-        
-        // 根据配置决定是否使用CORS代理
-        let apiUrl = LM_STUDIO_API;
-        if (USE_CORS_PROXY) {
-            apiUrl = CORS_PROXY + LM_STUDIO_API;
-        } else if (USE_LOCAL_PROXY) {
-            apiUrl = LOCAL_PROXY_URL + '/v1/chat/completions';
-        }
-        console.log("使用API地址:", apiUrl);
-        
-        const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest'  // 对某些CORS代理是必需的
-            },
-            body: JSON.stringify(requestBody)
-        });
-        
-        if (!response.ok) {
-            throw new Error(`API错误: ${response.status}`);
+        // 获取当前联系人的头像
+        let avatarSrc = '../res/images/placeholder.png';
+        if (currentContactId === "1") {
+            avatarSrc = '../res/images/gemini.png';
         }
         
-        const data = await response.json();
-        const aiResponse = data.choices[0].message.content;
+        // 调用LM Studio API获取回复，传入当前联系人ID
+        const response = await getLMStudioResponse(message, history, currentContactId);
         
-        // 移除输入提示
-        removeTypingIndicator();
+        // 检查是否有错误
+        if (response && response.error) {
+            // 移除"正在输入..."提示
+            removeTypingIndicator();
+            
+            // 显示错误消息
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'message received error';
+            errorDiv.innerHTML = `
+                <div class="message-avatar">
+                    <img src="${avatarSrc}" alt="AI">
+                </div>
+                <div class="message-content">
+                    <div class="message-bubble error-bubble">
+                        <div class="message-text">${response.message}</div>
+                    </div>
+                    <div class="message-time">系统错误</div>
+                </div>
+            `;
+            chatMessages.appendChild(errorDiv);
+            
+            // 滚动到底部
+            scrollToBottom();
+            return;
+        }
         
         // 获取当前时间
         const now = new Date();
@@ -297,76 +261,67 @@ async function getLMStudioResponse(message) {
         // 创建回复消息对象
         const replyObj = {
             type: 'received',
-            text: aiResponse,
+            text: response,
             time: time,
-            avatar: '../res/images/gemini.png',
+            avatar: avatarSrc,
             role: 'assistant'
         };
         
         // 添加到聊天历史
-        addMessageToHistory("1", replyObj);
+        addMessageToHistory(currentContactId, replyObj);
         
-        // 显示回复
-        const replyDiv = document.createElement('div');
-        replyDiv.className = 'message received';
-        replyDiv.innerHTML = `
+        // 移除"正在输入..."提示
+        removeTypingIndicator();
+        
+        // 创建回复消息元素
+        const replyElement = document.createElement('div');
+        replyElement.className = 'message received';
+        replyElement.innerHTML = `
             <div class="message-avatar">
-                <img src="../res/images/gemini.png" alt="Gemma3">
+                <img src="${avatarSrc}" alt="AI">
             </div>
             <div class="message-content">
                 <div class="message-bubble">
-                    <div class="message-text">${aiResponse}</div>
+                    <div class="message-text">${escapeHtml(response)}</div>
                 </div>
                 <div class="message-time">${time}</div>
             </div>
         `;
+        chatMessages.appendChild(replyElement);
         
-        chatMessages.appendChild(replyDiv);
+        // 更新联系人的最后一条消息
+        updateContactLastMessage(document.querySelector(`.contact[data-userid="${currentContactId}"]`), response, true);
+        
+        // 滚动到底部
         scrollToBottom();
-        
-        // 更新联系人最后一条消息
-        updateContactLastMessage(document.querySelector('.contact[data-userid="1"]'), aiResponse);
-        
     } catch (error) {
-        console.error("LLM API错误:", error);
+        console.error("处理LLM响应错误:", error);
         
-        // 移除输入提示
+        // 移除"正在输入..."提示
         removeTypingIndicator();
         
-        // 构建错误信息
-        let errorMessage = `抱歉，AI服务暂时无法连接。请确保LM Studio已在本地运行并监听端口1234。`;
-        errorMessage += `<br><small>错误详情: ${error.message}</small>`;
-        
-        // 添加CORS解决建议
-        if (error.message.includes("CORS") || error.message.includes("cross-origin")) {
-            errorMessage += `<br><small>这可能是CORS跨域问题，请尝试：
-            <ol>
-                <li>启动本地代理: <code>npx local-cors-proxy --proxyUrl http://127.0.0.1:1234 --port 8010</code></li>
-                <li>然后设置USE_LOCAL_PROXY = true</li>
-                <li>或修改LM Studio配置允许跨域请求</li>
-            </ol></small>`;
-        } else if (error.message.includes("Failed to fetch") || error.message.includes("NetworkError")) {
-            errorMessage += `<br><small>连接错误，请确保LM Studio正在运行，且API服务器已启动</small>`;
-        }
-        
-        // 显示错误信息
+        // 显示错误消息
         const errorDiv = document.createElement('div');
         errorDiv.className = 'message received error';
+        let avatarSrc = '../res/images/placeholder.png';
+        if (currentContactId === "1") {
+            avatarSrc = '../res/images/gemini.png';
+        }
+        
         errorDiv.innerHTML = `
             <div class="message-avatar">
-                <img src="../res/images/gemini.png" alt="Gemma3">
+                <img src="${avatarSrc}" alt="AI">
             </div>
             <div class="message-content">
-                <div class="message-bubble">
-                    <div class="message-text">
-                        ${errorMessage}
-                    </div>
+                <div class="message-bubble error-bubble">
+                    <div class="message-text">抱歉，发生了错误: ${error.message}</div>
                 </div>
-                <div class="message-time">${new Date().getHours().toString().padStart(2, '0')}:${new Date().getMinutes().toString().padStart(2, '0')}</div>
+                <div class="message-time">系统错误</div>
             </div>
         `;
-        
         chatMessages.appendChild(errorDiv);
+        
+        // 滚动到底部
         scrollToBottom();
     }
 }
@@ -441,10 +396,10 @@ function simulateReply() {
 }
 
 // 更新联系人最后一条消息
-function updateContactLastMessage(contact, message) {
+function updateContactLastMessage(contact, message, isAssistant = false) {
     const lastMessageEl = contact.querySelector('.contact-last-message');
     if (lastMessageEl) {
-        lastMessageEl.textContent = message;
+        lastMessageEl.textContent = isAssistant ? 'AI' : message;
     }
 }
 

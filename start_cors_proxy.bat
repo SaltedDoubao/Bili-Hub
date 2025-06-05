@@ -1,2 +1,2 @@
 @echo off
-npx local-cors-proxy --proxyUrl http://127.0.0.1:1234 --port 8010 
+npx local-cors-proxy --proxyUrl http://127.0.0.1:12393 --port 8010 

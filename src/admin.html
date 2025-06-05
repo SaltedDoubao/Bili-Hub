@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户管理 - Bili-Hub</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+
+<body>
+    <div class="login-container admin-container">
+        <div class="logo-box">
+            <div class="logo-section">
+                <div class="ph-logo">
+                    <span class="ph-logo-porn">Bili</span><span class="ph-logo-hub">Bili</span>
+                </div>
+            </div>
+        </div>
+        <div class="login-box admin-box">
+            <div class="admin-header">
+                <h2>用户管理</h2>
+                <div>
+                    <a href="./index.html" class="action-btn">返回首页</a>
+                </div>
+            </div>
+
+            <div class="message-area"></div>
+
+            <div class="action-buttons">
+                <button id="exportBtn" class="action-btn success">导出用户CSV</button>
+                <button id="refreshBtn" class="action-btn">刷新列表</button>
+            </div>
+
+            <div class="user-list">
+                <table class="user-table">
+                    <thead>
+                        <tr>
+                            <th>用户名</th>
+                            <th>昵称</th>
+                            <th>邮箱</th>
+                            <th>注册日期</th>
+                            <th>最后登录</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableBody">
+                        <!-- 用户数据将通过JavaScript动态添加 -->
+                    </tbody>
+                </table>
+                <div class="pagination" id="pagination">
+                    <!-- 分页按钮将通过JavaScript动态添加 -->
+                </div>
+            </div>
+
+            <div class="csv-import">
+                <h3>导入用户数据</h3>
+                <p>上传CSV文件，格式：用户名,昵称,邮箱,注册日期,最后登录</p>
+                <div class="file-input">
+                    <input type="file" id="csvFile" accept=".csv" />
+                </div>
+                <button id="importBtn" class="action-btn">导入数据</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./admin.js"></script>
+</body>
+
+</html> 

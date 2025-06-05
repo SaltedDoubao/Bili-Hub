@@ -39,40 +39,129 @@
 3.  **查看页面：**
     一旦本地服务器成功运行，您的浏览器应该会自动打开或您可以手动访问指定的 `http://localhost:8000/src/` 或 `http://localhost:8000/src/index.html` 地址来查看项目首页。
 
-## 🤖 使用LM Studio本地AI聊天功能
+## 📂 项目结构
 
-本项目包含一个聊天功能，可以连接本地运行的LM Studio API以实现AI聊天。
+本项目采用模块化的结构组织代码，主要分为以下几个部分：
+
+```
+Bili-Hub/
+│
+├── src/                  # 源代码目录
+│   ├── index.html        # 网站首页
+│   ├── style.css         # 主样式文件
+│   ├── script.js         # 首页主要脚本
+│   │
+│   ├── message.html      # 消息页面
+│   ├── message.css       # 消息页面样式
+│   ├── message.js        # 消息页面脚本
+│   │
+│   ├── userpage.html     # 用户主页
+│   ├── userpage.css      # 用户主页样式
+│   ├── userpage.js       # 用户主页脚本
+│   │
+│   ├── login.html        # 登录页面
+│   ├── login.css         # 登录/注册共用样式
+│   ├── login.js          # 登录页面脚本
+│   │
+│   ├── register.html     # 注册页面
+│   ├── register.js       # 注册页面脚本
+│   │
+│   ├── admin.html        # 管理员页面
+│   ├── admin.js          # 管理员页面脚本
+│   │
+│   ├── apiService.js     # API服务模块，处理LM Studio API调用
+│   ├── userService.js    # 用户服务模块，处理用户相关功能
+│   ├── chatData.js       # 聊天数据管理模块
+│   ├── search.js         # 搜索功能模块
+│   │
+│   ├── videos.json       # 视频数据
+│   └── carousel.json     # 轮播图数据
+│
+├── res/                  # 资源文件目录
+│   └── images/           # 图片资源
+│
+├── start_web_server.bat  # Windows启动脚本
+├── start_web_server.sh   # Linux/Mac启动脚本
+├── start_cors_proxy.bat  # CORS代理启动脚本
+├── LICENSE               # MIT许可证
+└── README.md             # 项目说明文档
+```
+
+### 核心功能模块说明
+
+1. **首页模块** - `index.html`, `style.css`, `script.js`
+   * 实现视频卡片的动态加载和展示
+   * 轮播图功能
+   * 顶部导航栏和侧边栏
+
+2. **消息聊天模块** - `message.html`, `message.css`, `message.js`, `chatData.js`, `apiService.js`
+   * 实现与AI助手的多角色对话功能
+   * 使用LM Studio API进行本地大语言模型对话
+   * 聊天历史记录管理
+
+3. **用户相关模块** - `login.html`, `register.html`, `userpage.html`, `userService.js`
+   * 用户注册和登录功能
+   * 用户个人主页
+   * 用户数据管理
+
+4. **管理系统模块** - `admin.html`, `admin.js`
+   * 用户管理功能
+   * 数据导入导出功能
+
+5. **数据模块** - `videos.json`, `carousel.json`
+   * 存储视频卡片数据
+   * 存储轮播图数据
+
+## 🤖 使用LM Studio本地AI多角色聊天功能
+
+本项目包含一个聊天功能，可以连接本地运行的LM Studio API以实现AI聊天。项目支持三种不同角色的AI对话体验。
 
 **设置步骤：**
 
 1. **下载并安装LM Studio**
    * 从[LM Studio官网](https://lmstudio.ai/)下载并安装LM Studio
-   * 导入一个支持聊天功能的大语言模型（本项目使用的gemma-3-4b-it-qat）
+   * 导入一个支持聊天功能的大语言模型（推荐使用gemma-3-4b-it-qat或其他同等能力的模型）
 
 2. **启动LM Studio API服务器**
    * 在LM Studio中加载您选择的模型
    * 点击"本地服务器"标签
-   * 启动本地API服务器（默认端口为1234）
+   * 启动本地API服务器（默认端口为12393）
 
 3. **启动CORS代理服务器**
    * 确保您的电脑已经安装node.js，且已经安装local-cors-proxy
    ```
-    npm install -g local-cors-proxy
+   npm install -g local-cors-proxy
    ```
-   * 双击运行项目根目录中的`start_cors_proxy.bat`脚本
+   * 在命令行中运行以下命令：
+   ```
+   npx local-cors-proxy --proxyUrl http://127.0.0.1:12393 --port 8010
+   ```
+   * 或者双击运行项目根目录中的`start_cors_proxy.bat`脚本
 
 4. **使用聊天功能**
-   * 在网站中点击Gemini 2.5 Pro聊天选项
-   * 可以开始与AI助手进行对话
+   * 在网站中进入消息页面
+   * 选择不同的聊天对象体验不同角色的AI对话：
+     * **Gemma3** - AI助手角色，友好活泼，了解二次元文化
+     * **B站用户** - 热情的B站用户和UP主，使用二次元网络用语
+     * **哔哩哔哩官方** - 专业的客服代表，提供官方指导和帮助
+
+5. **自定义角色提示词**
+   * 可以在`src/apiService.js`文件中的`ROLE_PROMPTS`对象中修改各角色的提示词
+   * 每个角色的提示词都可以根据需要调整，以创造不同的对话风格和专业知识领域
 
 **故障排除：**
 
 * 如果连接失败，请确保：
   * LM Studio正在运行且API服务器已启动
   * CORS代理服务器正在运行
-  * 端口设置正确（LM Studio使用1234，代理使用8010）
-  * 如果使用其他端口，请在`src/message.js`文件中更新相应设置
+  * 端口设置正确（LM Studio使用12393，代理使用8010）
+  * 如果使用其他端口，请在`src/apiService.js`文件中更新相应设置
+  * 检查浏览器控制台是否有CORS相关错误
 
+* 模型选择建议：
+  * 最佳体验需要一个支持角色扮演的大语言模型
+  * 较小的模型（如3B-7B参数的模型）通常足够用于本项目的聊天功能
+  * 可以在`src/apiService.js`中修改`DEFAULT_MODEL`变量来使用其他模型
 
 ## 👀 预览
 
@@ -90,7 +179,11 @@
 
 ● 多页面切换功能
 
-● 改进AI聊天功能，支持更多模型和功能
+● 改进AI聊天功能，支持更多模型和角色设定
+
+● 添加聊天记录导出和导入功能
+
+● 优化移动端适配体验
 
 ## ⚠️ 注意
 

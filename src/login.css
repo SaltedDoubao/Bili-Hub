@@ -2,24 +2,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
 }
 
-/* 全局样式和背景设置 */
+/* 全局样式重置 */
 body {
-    font-family: Arial, "Microsoft YaHei", sans-serif;
     background-color: #000000;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     color: #cccccc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* 登录容器样式 */
+/* 登录容器 */
 .login-container {
+    width: 420px;
+    background-color: transparent;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,30 +31,35 @@ body {
     padding: 0;
 }
 
-/* Logo区域样式 */
+/* Logo区域 */
 .logo-box {
     width: 380px;
+    padding: 30px 0;
+    background-color: transparent;
+    text-align: center;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
-    margin-bottom: 20px;
 }
 
-/* 引入style.css中的logo样式 */
-/* "ph-logo"（仿Pornhub风格Logo）的整体容器样式 */
+.logo-section {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .ph-logo {
-    display: inline-flex;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 32px;
     font-weight: bold;
     line-height: 1.2;
+    display: inline-flex;
     text-align: center;
     border-radius: 8px;
     overflow: hidden;
 }
 
-/* "ph-logo"中"Porn"部分的样式 */
 .ph-logo-porn {
     background: rgba(0, 0, 0, 0);
     color: #FFFFFF;
@@ -60,7 +68,6 @@ body {
     border-bottom-left-radius: 6px;
 }
 
-/* "ph-logo"中"Hub"部分的样式 */
 .ph-logo-hub {
     background-color: #FF9900;
     color: #000000;
@@ -72,19 +79,7 @@ body {
     margin-left: -4px;
 }
 
-.logo-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 30px;
-}
-
-.logo-section img {
-    max-width: 200px;
-    height: auto;
-}
-
-/* 登录框样式 - 暗色主题 */
+/* 登录表单区域 */
 .login-box {
     background-color: #1b1b1b;
     padding: 30px 40px;
@@ -102,9 +97,9 @@ body {
     font-size: 24px;
 }
 
-/* 表单元素样式 */
 .form-group {
     margin-bottom: 20px;
+    position: relative;
 }
 
 .form-group label {
@@ -114,8 +109,7 @@ body {
     font-size: 14px;
 }
 
-.form-group input[type="text"],
-.form-group input[type="password"] {
+.form-group input {
     width: 100%;
     padding: 12px;
     border: 1px solid #292929;
@@ -125,14 +119,12 @@ body {
     color: #ffffff;
 }
 
-.form-group input[type="text"]:focus,
-.form-group input[type="password"]:focus {
+.form-group input:focus {
     outline: none;
     border-color: #FF9900;
     box-shadow: 0 0 5px rgba(255, 153, 0, 0.5);
 }
 
-/* 按钮样式 */
 .login-btn {
     width: 100%;
     padding: 12px;
@@ -150,10 +142,14 @@ body {
     background-color: #e69500;
 }
 
-/* 额外链接样式 */
+.login-btn:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+}
+
 .extra-links {
-    text-align: center;
     margin-top: 20px;
+    text-align: center;
     font-size: 13px;
     color: #808080;
 }
@@ -166,4 +162,190 @@ body {
 .extra-links a:hover {
     text-decoration: underline;
     color: #ffa31a;
+}
+
+/* 注册表单额外样式 */
+.register-box {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.register-box .form-group {
+    margin-bottom: 15px;
+}
+
+.register-btn {
+    background-color: #FF9900;
+}
+
+.register-btn:hover {
+    background-color: #e69500;
+}
+
+/* 消息提示区域 */
+.message-area {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+}
+
+.message-area:not(:empty) {
+    display: block;
+}
+
+.message-area.error {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #ff6b6b;
+    border: 1px solid rgba(220, 53, 69, 0.5);
+}
+
+.message-area.success {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #51cf66;
+    border: 1px solid rgba(40, 167, 69, 0.5);
+}
+
+.message-area.info {
+    background-color: rgba(23, 162, 184, 0.2);
+    color: #66d9e8;
+    border: 1px solid rgba(23, 162, 184, 0.5);
+}
+
+/* 管理页面特定样式 */
+.admin-container {
+    width: 90%;
+    max-width: 1000px;
+}
+
+.admin-box {
+    padding: 30px;
+    max-height: none;
+    overflow-y: visible;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.action-btn {
+    padding: 8px 15px;
+    background-color: #FF9900;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.action-btn.danger {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.action-btn.success {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.user-table th,
+.user-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #292929;
+}
+
+.user-table th {
+    background-color: #292929;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.user-table tr:hover {
+    background-color: #222222;
+}
+
+.csv-import {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #292929;
+    border-radius: 4px;
+}
+
+.csv-import h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.file-input {
+    margin-bottom: 15px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    border: 1px solid #292929;
+    background-color: #1b1b1b;
+    color: #cccccc;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #FF9900;
+    color: #000000;
+    border-color: #FF9900;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+    }
+    
+    .login-box {
+        padding: 20px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .ph-logo {
+        font-size: 24px;
+    }
+    
+    .login-box h2 {
+        font-size: 20px;
+    }
+    
+    .form-group input {
+        padding: 10px;
+    }
+    
+    .login-btn {
+        padding: 10px;
+    }
 }
